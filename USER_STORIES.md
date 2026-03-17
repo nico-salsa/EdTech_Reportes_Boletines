@@ -90,13 +90,13 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 
 | Aspecto | Descripción |
 |---------|-------------|
-| **Como** | docente autenticado en el sistema |
-| **Quiero** | consultar mis cursos en la página principal |
-| **Para** | ver y gestionar la información relacionada al curso | 
+| **Como** | docente autenticado en el sistema  |
+| **Quiero** | consultar mis cursos |
+| **Para** | visualizar la información relacionada | 
 
 ### Criterios de aceptación
 
 **Criterio 1 - Visualizar detalle del curso**
-- **Dado**: un docente edita el título de un curso
-- **Cuando**: este confirma la información y el título no coincida con un curso ya creado
-- **Entonces**: el sistema debe cambiar el título del curso
+- **Dado**: que selecciono un curso existente en la página principal
+- **Cuando**: se carga la pantalla del detalle del curso
+- **Entonces**: debo de poder visualizar los detalles del curso
