@@ -53,8 +53,8 @@ En esta pantalla está la lsita de estudiantes inscritos al curso. Cada estudian
 
 Esta tabla de notas debe especificarse la primera vez que se entra al curso; estableciendo la cantidad de entregables y sus porcentajes de la nota final del curso.
 
->[!WARNING]
-Los entregables deben sumar exactamente 100% para poder guardar la tabla. No se aceptaran cambios que no cumplan esa norma en ningún momento.
+> [!WARNING]
+> Los entregables deben sumar exactamente 100% para poder guardar la tabla. No se aceptaran cambios que no cumplan esa norma en ningún momento.
 
 Una vez creada la tabla, cada estudiante tendra su fila con las siguientes columnas:
 - Nombre del estudiante
@@ -62,6 +62,7 @@ Una vez creada la tabla, cada estudiante tendra su fila con las siguientes colum
 - Promedio
 - Promedio ponderado
 </details>
+
 
 **EdTech** se visualiza como una herramienta que simplifica y acelera las labores diarias y repetitivas que tiene un docente durante la ejecución de un curso. A continuación se desglosa los objetivos de la aplicación y de cada una de sus pantallas:
 
