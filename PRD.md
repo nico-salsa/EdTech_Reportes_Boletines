@@ -32,3 +32,21 @@ En esta pantalla está el resumen de los cursos creados por el usuario. Por *def
 
 Esto es con el fin de mantener una interfaz limpia y ordenada en todo momento.
 También es posible crear cursos o modificarlos con el objetivo de tener un gestor centralizado para el usuario y sus pendientes.
+
+## 2. Alcance del MVP
+
+#### IN
+
+- Autenticación básica: Ingreso para los docentes
+- Gestión de entidades: (cursos, grupos, estudiantes)
+- Definir programa: agregar actividades evaluatorias a los cursos con un porcentaje de ponderación, donde la suma de ellas equivale al 100% del curso
+- Motor de calculo: Lógica para procesar las notas de los estudiantes de manera automática segun el programa definido, asignandole un promedio general y un promedio ponderado.
+- Exportación: Exportar boletines en formato <.PDF> <.HTML> <.XLSX>
+
+#### OUT
+
+- Carga Masiva: Importación de estudiantes mediante archivos CSV
+- Acceso a estudiantes: Portal estudiantil donde los estudiantes puedan ver sus notas y promedios
+- Gráficos estadísticos: Representaciones visuales avanzadas del rendimiendo general de los estudiantes de un curso o grupo
+
+---
