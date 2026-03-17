@@ -62,3 +62,47 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 `Cuando` este confirme la información
 
 `Entonces` el sistema debe resaltar el campo faltante y no procesar el inicio de sesión
+
+---
+
+## 3. HDU_3: Crear un nuevo curso
+`Como` docente autenticado en el sistema
+
+`Quiero` crear cursos
+
+`Para` gestionar la información de grupos, estudiantes y del programa académico
+
+#### Criterio 1 - Crear curso exitosamente
+`Dado` que un docente autenticado ingresa el título del curso
+
+`Cuando` este confirma la información
+
+`Y` el nombre del curso no exista en el sistema
+
+`Entonces` el sistema creará el curso en la página principal
+
+#### Criterio 2 - Crear curso duplicado
+`Dado` que un docente autenticado ingresa el título del curso
+
+`Cuando` este confirma la información
+
+`Y` el nombre del curso ya existe en el sistema
+
+`Entonces` el sistema debe mostrar un error indicando que ese curso ya existe y no procesará la creación de uno nuevo
+
+#### Criterio 3 - Modificar curso
+`Dado` que un docente edita el título de un curso
+
+`Cuando` este confirma la información
+
+`Y` el título no coincida con un curso ya creado
+
+`Entonces` el sistema debe cambiar el título del curso
+
+
+## 3. HDU_4: Consultar curso
+`Como` 
+
+`Quiero` 
+
+`Para` 
