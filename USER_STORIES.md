@@ -15,19 +15,19 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 ### Criterios de aceptación
 
 **Criterio 1 - Registro exitoso**
-- **Dado**: un docente ingresa su usuario y contraseña
-- **Cuando**: este confirme la información
-- **Entonces**: el sistema lo guardará en el sistema
+- **Dado**: que ingreso un nombre de usuario y una contraseña
+- **Cuando**: confirmo la información
+- **Entonces**: el sistema debe registrarme
 
 **Criterio 2 - Registro fallido**
-- **Dado**: el docente deja campos vacíos en el formulario de registro
-- **Cuando**: este confirme la información
-- **Entonces**: el sistema debe mostrar un error indicando los campos vacíos que son obligatorios y no finalizar el registro
+- **Dado**: que ingreso mi información con campos vacíos en el formulario de registro
+- **Cuando**: confirmo la información
+- **Entonces**: el sistema debe mostrar un mensaje de error indicando los campos vacíos que son obligatorios y no finalizar el registro
 
 **Criterio 3 - Registro duplicado**
-- **Dado**: el docente ingresa un usuario ya registrado
-- **Cuando**: este confirme la información
-- **Entonces**: el sistema debe mostrar un error indicando que dicho nombre de usuario ya se encuentra registrado y no finalizar el registro
+- **Dado**: que ingreso un nombre de usuario ya registrado
+- **Cuando**: confirmo la información
+- **Entonces**: el sistema debe mostrar un mensaje de error indicando que dicho nombre de usuario ya se encuentra registrado y no finalizar el registro
 
 ---
 
@@ -42,18 +42,18 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 ### Criterios de aceptación
 
 **Criterio 1 - Inicio de sesión válido**
-- **Dado**: un docente ingresa su usuario y contraseña
-- **Cuando**: este confirme la información y las credenciales coinciden con algún usuario registrado
-- **Entonces**: el sistema permitirá el acceso al usuario
+- **Dado**: que ingreso un nombre de usuario y contraseña
+- **Cuando**: confirmo la información y las credenciales coinciden con algún usuario registrado
+- **Entonces**: el sistema permitirá el acceso a la pagina principal
 
 **Criterio 2 - Inicio de sesión con credenciales inválidas**
-- **Dado**: un docente ingresa su usuario y contraseña
-- **Cuando**: este confirme la información y las credenciales no coinciden con ningún usuario registrado
-- **Entonces**: el sistema denegará el acceso al usuario
+- **Dado**: que ingreso un nombre de usuario y contraseña
+- **Cuando**: confirmo la información y las credenciales no coinciden con ningún usuario registrado
+- **Entonces**: el sistema denegará el acceso
 
 **Criterio 3 - Inicio de sesión inválido con campos vacíos**
-- **Dado**: un docente no completa un campo obligatorio
-- **Cuando**: este confirme la información
+- **Dado**: que relleno el formulario de inicio de sesión con un campo obligatorio vacío
+- **Cuando**: confirmo la información
 - **Entonces**: el sistema debe resaltar el campo faltante y no procesar el inicio de sesión
 
 ---
@@ -69,14 +69,15 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 ### Criterios de aceptación
 
 **Criterio 1 - Crear curso exitosamente**
-- **Dado**: un docente autenticado ingresa el título del curso
-- **Cuando**: este confirma la información y el nombre del curso no exista en el sistema
-- **Entonces**: el sistema creará el curso en la página principal
+- **Dado**: que ingreso el título del curso
+- **Cuando**: confirmo la información y el nombre del curso no existe en el sistema
+- **Entonces**: el sistema creará el curso
 
 **Criterio 2 - Crear curso duplicado**
-- **Dado**: un docente autenticado ingresa el título del curso
-- **Cuando**: este confirma la información y el nombre del curso ya existe en el sistema
-- **Entonces**: el sistema debe mostrar un error indicando que ese curso ya existe y no procesará la creación de uno nuevo
+- **Dado**: que ingreso el título del curso
+- **Cuando**: confirmo la información
+- **y**: el nombre del curso ya existe en el sistema
+- **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese curso ya existe y no procesará la creación de uno nuevo
 
 **Criterio 3 - Modificar curso**
 - **Dado**: un docente edita el título de un curso
@@ -89,6 +90,13 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 
 | Aspecto | Descripción |
 |---------|-------------|
-| **Como** |  |
-| **Quiero** |  |
-| **Para** |  | 
+| **Como** | docente autenticado en el sistema |
+| **Quiero** | consultar mis cursos en la página principal |
+| **Para** | ver y gestionar la información relacionada al curso | 
+
+### Criterios de aceptación
+
+**Criterio 1 - Visualizar detalle del curso**
+- **Dado**: un docente edita el título de un curso
+- **Cuando**: este confirma la información y el título no coincida con un curso ya creado
+- **Entonces**: el sistema debe cambiar el título del curso
