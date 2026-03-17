@@ -100,3 +100,32 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Dado**: que selecciono un curso existente en la página principal
 - **Cuando**: se carga la pantalla del detalle del curso
 - **Entonces**: debo de poder visualizar los detalles del curso
+
+## 5. HDU_5: Agregar estudiantes a la lista de estudiantes de un curso
+> [!CAUTION]
+> Verificar que cumpla principios invest (I: independiente)
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de gestión de estudiantes de un curso |
+| **Quiero** | agregar estudiantes al curso |
+| **Para** | gestionar sus notas y entregables en el curso | 
+
+### Criterios de aceptación
+
+**Criterio 1 - Agregar estudiante a la lista de estudiantes del curso**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes
+- **Cuando**: ingreso un estudiante con un ID nuevo
+- **Y**: relleno la información personal obligatoria del estudiante (ID, Nombre completo, Correo)
+- **Entonces**: debo de poder ver al estudiante en la lista de estudiantes del curso, y el estudiante debe quedar registrado en el sistema
+
+**Criterio 2 - Agregar estudiante a la lista de estudiantes del curso con campos obligatorios vacíos**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes
+- **Cuando**: ingreso un estudiante con un ID nuevo
+- **Y**: relleno la información personal obligatoria del estudiante de forma incompleta (ID, Nombre completo, Correo)
+- **Entonces**: el estudiante no se debe agregar a la lista de estudiantes del curso, y no se procesará la creacion del estudiante en el sistema
+
+**Criterio 3 - Agregar estudiante existente a la lista de estudiantes del curso**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes
+- **Cuando**: ingreso un estudiante con un ID existente
+- **Entonces**: debo de poder ver al estudiante en la lista de estudiantes del curso, con su información personal autocompletada
