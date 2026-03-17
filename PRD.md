@@ -11,8 +11,8 @@
 
 ## 1. Visión y Objetivos
 
-!!! note
-    Esta solución está pensada como una app de ejecución local, no como un aplicación web.
+> [!NOTE]
+> Esta solución está pensada como una app de ejecución local, no como un aplicación web.
 
 El desarrollo de esta solución involucra 4 pantallas principales:
 1. *Login* de profesores
@@ -49,4 +49,23 @@ También es posible crear cursos o modificarlos con el objetivo de tener un gest
 - Acceso a estudiantes: Portal estudiantil donde los estudiantes puedan ver sus notas y promedios
 - Gráficos estadísticos: Representaciones visuales avanzadas del rendimiendo general de los estudiantes de un curso o grupo
 
----
+
+## 3. Riesgos
+
+#### Del negocio:
+
+- Curva de aprendizaje elevada: Riesgo de que alguna interfaz sea tan complicada que el docente prefiera métodos tradicionales como Excel, haciendo que el producto pierda su propósito
+
+- Duplicidad de datos: Registrar 2 veces a un mismo estudiante en un mismo grupo
+
+- Manejo de datos sensibles: Manejo inadecuado de las calificaciones de los estudiantes
+
+#### Técnicos
+
+- Inconsistencia en la exportación de promedios/boletines
+
+- Precisión inconstante en el cálculo de los promedios de los estudiantes
+
+- Que el sistema guarde un programa en donde la suma de los porcentajes de ponderación de las actividades evaluatorias definidas no sumen un 100% del curso.
+
+- Corrupcion de archivos (que el archivo PDF, HTML o JSON se genere incompleto o con errores)
