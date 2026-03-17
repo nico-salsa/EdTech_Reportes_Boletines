@@ -5,7 +5,7 @@
 >
 > Esta solución se enfoca en una herramienta para centralizar la generación y el cálculo de promedios de los estudiantes para cada uno de sus cursos.
 >
-> Los boletines se pueden exportar en formato `.pdf`, `.html`, `.xlsx`.
+> Los boletines se pueden exportar en formato `.pdf`, `.html`, `.json`.
 
 ---
 
@@ -41,7 +41,7 @@ También es posible crear cursos o modificarlos con el objetivo de tener un gest
 - Gestión de entidades: (cursos, grupos, estudiantes)
 - Definir programa: agregar actividades evaluatorias a los cursos con un porcentaje de ponderación, donde la suma de ellas equivale al 100% del curso
 - Motor de calculo: Lógica para procesar las notas de los estudiantes de manera automática segun el programa definido, asignandole un promedio general y un promedio ponderado.
-- Exportación: Exportar boletines en formato <.PDF> <.HTML> <.XLSX>
+- Exportación: Exportar boletines en formato <.PDF> <.HTML> <.JSON>
 
 #### OUT
 
