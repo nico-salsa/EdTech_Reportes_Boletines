@@ -1,2 +1,0 @@
-SetUp del proyecto
-
