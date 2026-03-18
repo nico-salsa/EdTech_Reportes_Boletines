@@ -80,8 +80,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese curso ya existe y no procesará la creación de uno nuevo
 
 **Criterio 3 - Modificar curso**
-- **Dado**: un docente edita el título de un curso
-- **Cuando**: este confirma la información y el título no coincida con un curso ya creado
+- **Dado**: que edito el título de un curso
+- **Cuando**: confirmo la información y el título no coincide con un curso ya creado
 - **Entonces**: el sistema debe cambiar el título del curso
 
 ---
@@ -202,3 +202,33 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Cuando**: desasigno a un estudiante de un grupo
 - **Entonces**: el estudiante que fue desasignado no deberia de aparecer en la lista de estudiantes del grupo
 - **Y** el estudiante deberia de permanecer en la lista general de estudiantes del curso
+
+## 9. HDU_9: Eliminar grupo dentro de un curso
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de gestión de estudiantes de un curso |
+| **Quiero** | eliminar un grupo dentro del curso |
+| **Para** | gestionar los grupos que tiene el curso | 
+
+**Criterio 1 - eliminar grupo vacío**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes de un curso
+- **Cuando**: elimino un grupo dentro del curso
+- **Y**: la lista de estudiantes del grupo está vacía
+- **Entonces**: el grupo eliminado no se debería de ver en la lista de grupos del curso
+
+**Criterio 2 - eliminar grupo con estudiantes de manera exitosa**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes de un curso
+- **Cuando**: elimino un grupo dentro del curso
+- **Y**: hay estudiantes dentro de la lista de estudiantes del grupo
+- **Y**: confirmo la eliminación del grupo
+- **Entonces**: el grupo eliminado no se debería de ver en la lista de grupos del curso
+- **Y**: los estudiantes pertenecientes al grupo eliminado deberían permanecer en la lista general de estudiantes del curso
+
+**Criterio 3 - eliminar grupo con estudiantes de manera fallida**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes de un curso
+- **Cuando**: elimino un grupo dentro del curso
+- **Y**: hay estudiantes dentro de la lista de estudiantes del grupo
+- **Y**: cancelo la eliminación del grupo
+- **Entonces**: el grupo debe de permanecer en la lista de grupos del curso
+- **Y**: los estudiantes pertenecientes al grupo deben permanecer en la lista de estudiantes del grupo
