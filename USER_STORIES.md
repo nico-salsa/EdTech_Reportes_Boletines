@@ -260,3 +260,11 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: el nuevo titulo del grupo está vacío
 - **Entonces**: el sistema no debería de guardar el cambio
 - **Y**: el sistema debe mostrar un mensaje de error indicando que el nuevo título está vacío
+
+## 11. HDU_11: Definir programa del curso
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de detalle del curso |
+| **Quiero** | definir un programa dentro del curso |
+| **Para** | agregar instancias evaluatorias con un porcentaje de ponderacion determinado | 
