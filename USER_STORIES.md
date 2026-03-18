@@ -130,7 +130,6 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Cuando**: ingreso un estudiante con un ID existente
 - **Entonces**: debo de poder ver al estudiante en la lista de estudiantes del curso, con su información personal autocompletada
 
-<<<<<<< HEAD
 ## 5. HDU_7: Asignar estudiante a un grupo dentro de un curso
 
 | Aspecto | Descripción |
@@ -156,7 +155,6 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Cuando**: asigno un estudiante del curso a un grupo especifico
 - **Y**: el estudiante ya forma parte de otro grupo del curso
 - **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese estudiante ya forma parte de otro grupo dentro del curso y no procesará la asignacion
-=======
 ---
 
 ## 6. HDU_6: Agregar grupos a un curso creado
@@ -187,4 +185,3 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: asigno un nombre al grupo
 - **Y**: el nombre del grupo que ingresé coincide con alguno que ya existe en la lista de grupos del curso
 - **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese grupo ya existe en el curso y no procesará la creación de uno nuevo
->>>>>>> f2f7df4befce6c181c8ab086e057c6864a510f97
