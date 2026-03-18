@@ -186,3 +186,19 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: el estudiante ya forma parte de otro grupo del curso
 - **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese estudiante ya forma parte de otro grupo dentro del curso y no procesará la asignacion
 ---
+
+## 8. HDU_8: Desasignar estudiante de un grupo dentro del curso
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de gestión de estudiantes de un curso |
+| **Quiero** | desasignar a un estudiante de la lista de estudiantes de un grupo del curso |
+| **Para** | gestionar a los estudiantes que pertenecen al grupo | 
+
+### Criterios de aceptación
+
+**Criterio 1 - desasignar estudiante de un grupo**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes
+- **Cuando**: desasigno a un estudiante de un grupo
+- **Entonces**: el estudiante que fue desasignado no deberia de aparecer en la lista de estudiantes del grupo
+- **Y** el estudiante deberia de permanecer en la lista general de estudiantes del curso
