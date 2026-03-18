@@ -129,3 +129,29 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Dado**: que me encuentro en la pantalla de gestion de estudiantes
 - **Cuando**: ingreso un estudiante con un ID existente
 - **Entonces**: debo de poder ver al estudiante en la lista de estudiantes del curso, con su información personal autocompletada
+
+## 5. HDU_7: Asignar estudiante a un grupo dentro de un curso
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de gestión de estudiantes de un curso |
+| **Quiero** | asignar un estudiante de la lista de estudiantes del curso a un grupo especifico |
+| **Para** | separar los estudiantes de un curso en distintos grupos | 
+
+### Criterios de aceptación
+
+**Criterio 1 - asignar estudiante a un grupo**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes
+- **Cuando**: asigno un estudiante del curso a un grupo especifico
+- **Entonces**: debo de poder ver al estudiante en la lista de estudiantes del grupo que corresponde al curso
+
+**Criterio 2 - asignar estudiante repetido a un grupo**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes
+- **Cuando**: asigno un estudiante del curso a un grupo especifico en el cual ya se encuentra
+- **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese estudiante ya forma parte del grupo y no procesará la asignacion al grupo
+
+**Criterio 3 - asignar estudiante repetido a un grupo**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes
+- **Cuando**: asigno un estudiante del curso a un grupo especifico
+- **Y**: el estudiante ya forma parte de otro grupo del curso
+- **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese estudiante ya forma parte de otro grupo dentro del curso y no procesará la asignacion
