@@ -99,11 +99,11 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 **Criterio 1 - Visualizar detalle del curso**
 - **Dado**: que selecciono un curso existente en la página principal
 - **Cuando**: se carga la pantalla del detalle del curso
-- **Entonces**: debo de poder visualizar los detalles del curso
+- **Entonces**: debo de poder visualizar la lista de estudiantes del curso con su nombre completo, su grupo asignado y sus promedios 
 
 ## 5. HDU_5: Agregar estudiantes a la lista de estudiantes de un curso
-> [!CAUTION]
-> Verificar que cumpla principios invest (I: independiente)
+> [!NOTE]
+> Esta historia de usuario tiene 2 responsabilidades que fueron contempladas como necesarias para la HU, ya que el registro de los estudiantes al sistema ocurre utilizando un metodo *"on-the-fly"* con la finalidad de aportar mejor experiencia de usuario para los docentes que utilicen la herramienta.
 
 | Aspecto | Descripción |
 |---------|-------------|
@@ -150,7 +150,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Cuando**: asigno un estudiante del curso a un grupo especifico en el cual ya se encuentra
 - **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese estudiante ya forma parte del grupo y no procesará la asignacion al grupo
 
-**Criterio 3 - asignar estudiante repetido a un grupo**
+**Criterio 3 - asignar estudiante que ya pertenece a un grupo a un grupo nuevo**
 - **Dado**: que me encuentro en la pantalla de gestion de estudiantes
 - **Cuando**: asigno un estudiante del curso a un grupo especifico
 - **Y**: el estudiante ya forma parte de otro grupo del curso
