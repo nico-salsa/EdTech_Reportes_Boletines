@@ -129,3 +129,34 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Dado**: que me encuentro en la pantalla de gestion de estudiantes
 - **Cuando**: ingreso un estudiante con un ID existente
 - **Entonces**: debo de poder ver al estudiante en la lista de estudiantes del curso, con su información personal autocompletada
+
+---
+
+## 6. HDU_6: Agregar grupos a un curso creado
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de gestión de grupos de un curso |
+| **Quiero** | agregar grupos al curso |
+| **Para** | gestionar diferentes estudiantes con horarios distintos en grupos separados | 
+
+### Criterios de aceptación
+
+**Criterio 1 - Agregar grupo a la lista de grupos del curso**
+- **Dado**: que me encuentro en la pantalla de gestion de grupos
+- **Cuando**: selecciono crear nuevo grupo
+- **Y**: asigno un nombre al grupo
+- **Entonces**: debo de poder ver el grupo en la lista de grupos del curso
+
+**Criterio 2 - Agregar grupo a la lista de grupos del curso con campos obligatorios vacíos**
+- **Dado**: que me encuentro en la pantalla de gestion de grupos
+- **Cuando**: selecciono crear nuevo grupo
+- **Y**: dejo vacío el nombre del grupo
+- **Entonces**: el sistema debe resaltar el campo faltante y no crear el nuevo grupo
+
+**Criterio 3 - Agregar grupo con nombre ya existente en la lista de grupos**
+- **Dado**: que me encuentro en la pantalla de gestion de grupos
+- **Cuando**: selecciono crear nuevo grupo
+- **Y**: asigno un nombre al grupo
+- **Y**: el nombre del grupo que ingresé coincide con alguno que ya existe en la lista de grupos del curso
+- **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese grupo ya existe en el curso y no procesará la creación de uno nuevo
