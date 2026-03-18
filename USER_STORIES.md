@@ -268,3 +268,34 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Como** | docente viendo la pantalla de detalle del curso |
 | **Quiero** | definir un programa dentro del curso |
 | **Para** | agregar instancias evaluatorias con un porcentaje de ponderacion determinado | 
+
+**Criterio 1 - definir programa existosamente**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: defino un programa
+- **Y**: agrego {cantidad} de instancias evaluatorias
+- **Y**: asigno un porcentaje de ponderacion a todas las instancias evaluatorias agregadas
+- **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias coincide con el 100%
+- **Y**: confirmo la definicion del programa
+- **Entonces**: el sistema debe guardar el programa del curso
+- **Y**: las instancias evaluatorias deben verse en la pantalla de detalle del curso
+
+**Criterio 2 - definir programa con instancias de evaluación vacías**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: defino un programa
+- **Y**: agrego {cantidad} de instancias evaluatorias
+- **Y**: al menos una instancia evaluatoria no tiene nombre
+- **Y**: confirmo la definicion del programa
+- **Entonces**: la definicion del curso no se debe procesar
+- **Y**: el sistema debe notificar que no se permiten agregar instancias evaluatorias sin nombre
+- **Y**: se debe permitir que las actividades evaluatorias con titulo vacío sean completadas
+
+**Criterio 3 - definir programa cuyas instancias de evaluación no sumen un 100%**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: defino un programa
+- **Y**: agrego {cantidad} de instancias evaluatorias
+- **Y**: asigno un porcentaje de ponderacion a todas las instancias evaluatorias agregadas
+- **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias no coincide con el 100%
+- **Y**: confirmo la definicion del programa
+- **Entonces**: la definicion del curso no se debe procesar
+- **Y**: el sistema debe notificar que la suma de porcentajes de ponderacion de las instancias evaluatorias tienen que sumar un total del 100%
+- **Y**: se debe permitir que los porcentajes de ponderación se actualicen para lograr que la suma de estos sea del 100%
