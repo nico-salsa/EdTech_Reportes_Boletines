@@ -232,3 +232,24 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: cancelo la eliminación del grupo
 - **Entonces**: el grupo debe de permanecer en la lista de grupos del curso
 - **Y**: los estudiantes pertenecientes al grupo deben permanecer en la lista de estudiantes del grupo
+
+## 10. HDU_10: Actualizar título de un grupo dentro del curso
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de gestión de estudiantes de un curso |
+| **Quiero** | actualizar el nombre de un grupo dentro del curso |
+| **Para** | gestionar los grupos que tiene el curso | 
+
+**Criterio 1 - actualizar título de un grupo de manera exitosa**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes de un curso
+- **Cuando**: actualizo el titulo de un grupo dentro del curso
+- **Y**: el nuevo titulo del grupo no coincide con otro titulo existente
+- **Entonces**: el cambio de titulo debe verse reflejado en la lista de grupos del curso
+
+**Criterio 2 - actualizar título de un grupo con titulo duplicado**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes de un curso
+- **Cuando**: actualizo el titulo de un grupo dentro del curso
+- **Y**: el nuevo titulo del grupo coincide con otro titulo existente
+- **Entonces**: el sistema no debería de guardar el cambio
+- **Y**: el sistema debe mostrar un mensaje de error indicando que el titulo ya está en uso
