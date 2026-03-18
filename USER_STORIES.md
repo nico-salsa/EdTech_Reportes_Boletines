@@ -253,3 +253,10 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: el nuevo titulo del grupo coincide con otro titulo existente
 - **Entonces**: el sistema no debería de guardar el cambio
 - **Y**: el sistema debe mostrar un mensaje de error indicando que el titulo ya está en uso
+
+**Criterio 3 - actualizar título de un grupo con titulo vacío**
+- **Dado**: que me encuentro en la pantalla de gestion de estudiantes de un curso
+- **Cuando**: actualizo el titulo de un grupo dentro del curso
+- **Y**: el nuevo titulo del grupo está vacío
+- **Entonces**: el sistema no debería de guardar el cambio
+- **Y**: el sistema debe mostrar un mensaje de error indicando que el nuevo título está vacío
