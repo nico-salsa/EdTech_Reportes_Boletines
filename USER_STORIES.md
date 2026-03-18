@@ -318,3 +318,13 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Entonces**: la definicion del programa no se debe procesar
 - **Y**: el sistema debe notificar que cada instancia debe tener una ponderación mayor al 0%
 - **Y**: el sistema debe permitir que las actividades evaluatorias sin ponderación sean completadas
+
+**Criterio 6 - definir programa con instancias de evaluación con porcentaje de ponderación negativo**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opcion de definir un programa
+- **Y**: agrego una lista de instancias evaluatorias
+- **Y**: al menos una instancia evaluatoria tiene un porcentaje de ponderacion negativo
+- **Y**: confirmo la definicion del programa
+- **Entonces**: la definicion del programa no se debe procesar
+- **Y**: el sistema debe notificar que cada instancia debe tener una ponderación mayor al 0%
+- **Y**: el sistema debe permitir que las actividades evaluatorias con ponderación negativa sean editadas
