@@ -285,7 +285,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: agrego una lista de instancias evaluatorias
 - **Y**: al menos una instancia evaluatoria no tiene nombre
 - **Y**: confirmo la definicion del programa
-- **Entonces**: la definicion del curso no se debe procesar
+- **Entonces**: la definicion del programa no se debe procesar
 - **Y**: el sistema debe notificar que no se permiten agregar instancias evaluatorias sin nombre
 - **Y**: el sistema debe permitir que las actividades evaluatorias con nombre vacío sean completadas
 
@@ -296,7 +296,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: asigno un porcentaje de ponderacion a todas las instancias evaluatorias agregadas
 - **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias no coincide con el 100%
 - **Y**: confirmo la definicion del programa
-- **Entonces**: la definicion del curso no se debe procesar
+- **Entonces**: la definicion del programa no se debe procesar
 - **Y**: el sistema debe notificar que la suma de porcentajes de ponderacion de las instancias evaluatorias tienen que sumar un total del 100%
 - **Y**: se debe permitir que los porcentajes de ponderación se actualicen para lograr que la suma de estos sea del 100%
 
@@ -308,3 +308,13 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: confirmo la definicion del programa
 - **Entonces**: el sistema debe guardar el programa del curso
 - **Y**: las instancias evaluatorias deben verse en la pantalla de detalle del curso
+
+**Criterio 5 - definir programa con instancias de evaluación con peso cero**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opcion de definir un programa
+- **Y**: agrego una lista de instancias evaluatorias
+- **Y**: al menos una instancia evaluatoria no tiene un porcentaje de ponderacion o su porcentaje es igual a 0
+- **Y**: confirmo la definicion del programa
+- **Entonces**: la definicion del programa no se debe procesar
+- **Y**: el sistema debe notificar que cada instancia debe tener una ponderación mayor al 0%
+- **Y**: el sistema debe permitir que las actividades evaluatorias sin ponderación sean completadas
