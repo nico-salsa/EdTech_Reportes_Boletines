@@ -427,3 +427,26 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: ingreso una nota con un valor alfanumérico o con símbolos 
 - **Entonces**: la nota no se debe guardar
 - **Y**: el sistema debe mostrar un error de formato
+
+## 15. HDU_15: generar boletín del estudiante de un curso
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de detalle del curso |
+| **Quiero** | generar un boletín reflejando las notas y promedio de un estudiante del curso |
+| **Para** | descargar los boletines academicos de los estudiantes en distintos formatos | 
+
+**Criterio 1 - generar boletín de un estudiante del curso**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opción de generar boletin de un estudiante del curso
+- **Y**: selecciono uno de los formatos disponibles
+- **Entonces**: el sistema debe descargar el boletín con la información completa del estudiante, y la información de sus notas y promedios del curso en el formato seleccionado
+
+**Criterio 2 - generar boletín de un estudiante del curso con al menos una instancia de evaluación vacía**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opción de generar boletin de un estudiante del curso
+- **Y**: el estudiante tiene una nota **vacía** en al menos una instancia de evaluación
+- **Y**: el sistema informa sobre la existencia de notas **vacías** en las instancias de evaluación
+- **Y**: confirmo la generación del boletin
+- **Y**: selecciono uno de los formatos disponibles
+- **Entonces**: el sistema debe descargar el boletín con la información completa del estudiante, y la información de sus notas y promedios del curso en el formato seleccionado
