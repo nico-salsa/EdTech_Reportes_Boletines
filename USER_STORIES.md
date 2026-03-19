@@ -286,6 +286,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | eliminar un grupo dentro del curso |
 | **Para** | gestionar los grupos que tiene el curso | 
 
+### Criterios de aceptación
+
 **Criterio 1 - eliminar grupo vacío**
 - **Dado**: que me encuentro en la pantalla de gestion de estudiantes de un curso
 - **Cuando**: elimino un grupo dentro del curso
