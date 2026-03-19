@@ -152,6 +152,10 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | crear cursos |
 | **Para** | gestionar la información de grupos, estudiantes y del programa académico |
 
+### DoR
+
+- La definición del contrato que válida el nombre del curso ya existe y está estandarizada
+
 ### Criterios de aceptación
 
 **Criterio 1 - Crear curso exitosamente**
@@ -170,6 +174,10 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Cuando**: confirmo la información y el título no coincide con un curso ya creado
 - **Entonces**: el sistema debe cambiar el título del curso
 
+### DoD
+
+- El curso creado o actualizado queda visible en el sistema
+
 ---
 
 ## 4. HDU_4: Consultar curso
@@ -180,12 +188,21 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | consultar mis cursos |
 | **Para** | visualizar la información relacionada | 
 
+### DoR
+
+- Existe al menos 1 curso creado
+- El detalle del curso muestra una tabla con `nombre completo`, `grupo asignado` y `promedio` de los estudiantes.
+
 ### Criterios de aceptación
 
 **Criterio 1 - Visualizar detalle del curso**
 - **Dado**: que selecciono un curso existente en la página principal
 - **Cuando**: se carga la pantalla del detalle del curso
 - **Entonces**: debo de poder visualizar la lista de estudiantes del curso con su nombre completo, su grupo asignado y sus promedios 
+
+### DoD
+
+- Para cada estudiante se muestra la información completa: `nombre completo`, `grupo asignado` y `promedio`
 
 ## 5. HDU_5: Agregar estudiantes a la lista de estudiantes de un curso
 > [!NOTE]
