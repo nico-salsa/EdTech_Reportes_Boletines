@@ -450,3 +450,18 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: confirmo la generación del boletin
 - **Y**: selecciono uno de los formatos disponibles
 - **Entonces**: el sistema debe descargar el boletín con la información completa del estudiante, y la información de sus notas y promedios del curso en el formato seleccionado
+
+## 16. HDU_16: generar reporte de calificaciones de todos los estudiantes de un curso
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de detalle del curso |
+| **Quiero** | generar un reporte consolidado de calificaciones de todos los estudiantes |
+| **Para** | analizar el rendimiento grupal y descargar el acta de notas final | 
+
+**Criterio 1 - generar reporte consolidado exitosamente**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Y**: que el curso tiene estudiantes registrados y un programa definido.
+- **Cuando**: selecciono la opción de generar reporte grupal
+- **Y**: selecciono uno de los formatos disponibles
+- **Entonces**: el sistema debe descargar un archivo que contenga la lista de todos los estudiantes en filas, con sus respectivas notas en columnas y sus promedios finales en el formato seleccionado
