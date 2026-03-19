@@ -104,3 +104,15 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Integridad de Datos**: Validar en base de datos que el campo grupo_id del estudiante pase a NULL sin afectar sus notas o asistencia registradas en el curso
+
+## HDU_9: Eliminar grupo dentro de un curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Definir flujos para eliminación de grupo vacío, eliminación con confirmación y cancelación del proceso 
+- **Validación de API**: Automatizar pruebas para el endpoint DELETE, verificando que el código 200 OK o 204 No Content se reciba tras la confirmación
+- **Pruebas de UI**: Verificar que el modal de advertencia aparezca solo cuando el grupo tiene estudiantes y que la lista de grupos se actualice visualmente tras la eliminación.
+
+#### No funcionales
+- **Integridad de Datos**: Validar en base de datos que al borrar el grupo, los registros de los estudiantes pasen a grupo_id = NULL automáticamente, que no se borren de la tabla Estudiantes y que los estudiantes mantengan su vínculo con el curso
