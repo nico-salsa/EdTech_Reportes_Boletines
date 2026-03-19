@@ -382,3 +382,41 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Entonces**: la definicion del programa no se debe procesar
 - **Y**: el sistema debe notificar que cada instancia debe tener una ponderación mayor al 0%
 - **Y**: el sistema debe permitir que las actividades evaluatorias con ponderación negativa sean editadas
+
+## 14. HDU_14: Agregar nota de una instancia de evaluacion del programa a un estudiante del curso
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de detalle del curso |
+| **Quiero** | agregar la nota de una instancia de evaluacion de un estudiante |
+| **Para** | llevar un registro de las notas del estudiante y su promedio | 
+
+**Criterio 1 - agregar una nota de una instancia de evaluacion del estudiante exitosamente**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opción de agregar nota de una instancia de evaluacion a un estudiante
+- **Y**: ingreso una nota mayor a '0'
+- **Entonces**: el sistema debe guardar la nota del estudiante en la instancia seleccionada
+- **Y**: la nueva nota del estudiante debe verse reflejada en la pantalla de detalle del curso
+- **Y**: el promedio ponderado del estudiante debe actualizarse automáticamente en la pantalla de detalle.
+- **Y**: el promedio general del estudiante debe actualizarse automáticamente en la pantalla de detalle.
+
+**Criterio 2 - agregar una nota **negativa** o **0** de una instancia de evaluacion del estudiante**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opción de agregar nota de una instancia de evaluacion a un estudiante
+- **Y**: ingreso una nota menor o igual a '0'
+- **Entonces**: la nota no se debe guardar
+- **Y**: el sistema debe notificar que no se permiten notas sin valor o negativas
+
+**Criterio 3 - agregar una nota vacía de una instancia de evaluacion del estudiante**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opción de agregar nota de una instancia de evaluacion a un estudiante
+- **Y**: Ingreso una nota **nula**
+- **Entonces**: la nota no se debe guardar
+- **Y**: el sistema debe notificar que la nota no puede ser nula
+
+**Criterio 4 - agregar una nota con caracteres no numéricos de una instancia de evaluacion del estudiante**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opción de agregar nota de una instancia de evaluacion a un estudiante
+- **Y**: ingreso una nota con un valor alfanumérico o con símbolos 
+- **Entonces**: la nota no se debe guardar
+- **Y**: el sistema debe mostrar un error de formato
