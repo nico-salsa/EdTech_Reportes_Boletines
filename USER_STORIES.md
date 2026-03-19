@@ -465,3 +465,12 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Cuando**: selecciono la opción de generar reporte grupal
 - **Y**: selecciono uno de los formatos disponibles
 - **Entonces**: el sistema debe descargar un archivo que contenga la lista de todos los estudiantes en filas, con sus respectivas notas en columnas y sus promedios finales en el formato seleccionado
+
+**Criterio 2 - advertencia de registros incompletos**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Y**: que el curso tiene estudiantes registrados y un programa definido.
+- **Cuando**: selecciono la opción de generar reporte grupal
+- **Y**: selecciono uno de los formatos disponibles
+- **Y**: existen estudiantes con instancias de evaluación sin calificar (notas nulas)
+- **Entonces**: el sistema debe advertir que el reporte se generará con notas incompletas antes de iniciar la descarga
+- **Y**: el sistema debe descargar un archivo que contenga la lista de todos los estudiantes en filas, con sus respectivas notas en columnas y sus promedios finales en el formato seleccionado
