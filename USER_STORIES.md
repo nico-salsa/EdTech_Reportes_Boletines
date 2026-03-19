@@ -3,11 +3,28 @@
 A continuación dejamos la constancia de las historias de usuario redactadas para este proyecto.
 
 > [!NOTE]
-> Estas historias de usuario están pensadas para principalmente la fase Backend.
+> Estas historias de usuario están pensadas para principalmente la fase Backend
 >
 > `DoR` significa "Definition of Ready"
 >
-> `DoD` significa "Definition of Done"
+> `DoD` significa "Definition of Done". Se acuerda que los criterios de aceptación de cada HDU debieron aceptarse por 1 par. También se acuerda que para cada HDU con lógica deben pasarse por pruebas unitarias que cubran un 80% del código fuente a introducir
+
+---
+
+# Definition of Ready (base)
+
+1. Prerequisitos técnicos: el mockup del fronted está completo
+2. El contrato de backend debe abarcar cada llamado para este entregable
+
+---
+
+# Definition of Done (base)
+
+Se considera una serie de reglas para todas las historias de usuario:
+
+1. Los criterios de aceptación de la historia fueron cumplidos y aceptados por 1 par
+2. El proyecto se puede construir usando Gradle sin errores
+3. El código cumple con las reglas de estilo y formato configurado para el proyecto
 
 ---
 
@@ -214,6 +231,12 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | agregar estudiantes al curso |
 | **Para** | gestionar sus notas y entregables en el curso | 
 
+### DoR
+
+- Existe un curso creado
+- Está definido el alta *on-the-fly* de estudiantes.
+- El bloque de búsqueda por ID SOLO contiene IDs y sus searchs están definidos
+
 ### Criterios de aceptación
 
 **Criterio 1 - Agregar estudiante a la lista de estudiantes del curso**
@@ -235,6 +258,10 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Cuando**: ingreso un estudiante con un ID existente
 - **Entonces**: debo de poder ver al estudiante en la lista de estudiantes del curso, con su información personal autocompletada
 
+### DoD
+
+- Los criterios de aceptación fueron revisador por 1 par
+
 ## 6. HDU_6: Agregar grupos a un curso creado
 
 | Aspecto | Descripción |
@@ -242,6 +269,10 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Como** | docente viendo la pantalla de gestión de grupos de un curso |
 | **Quiero** | agregar grupos al curso |
 | **Para** | gestionar diferentes estudiantes con horarios distintos en grupos separados | 
+
+### DoR
+
+- Está definido la validación de nombre de grupo; detecta nombres duplicados y únicos
 
 ### Criterios de aceptación
 
@@ -264,6 +295,10 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: el nombre del grupo que ingresé coincide con alguno que ya existe en la lista de grupos del curso
 - **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese grupo ya existe en el curso y no procesará la creación de uno nuevo
 
+### DoD
+
+- Los criterios de aceptación fueron aceptador por 1 par
+
 
 ## 7. HDU_7: Asignar estudiante a un grupo dentro de un curso
 
@@ -272,6 +307,12 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Como** | docente viendo la pantalla de gestión de estudiantes de un curso |
 | **Quiero** | asignar un estudiante de la lista de estudiantes del curso a un grupo especifico |
 | **Para** | separar los estudiantes de un curso en distintos grupos | 
+
+### DoR
+
+- Existe al menos un grupo creado dentro del curso
+- Existe al menos un estudiante en la lista dentro del curso
+- Está definida la claúsula en el contrato de que un estudiante no puede pertenecer a dos grupos del mismo curso
 
 ### Criterios de aceptación
 
@@ -290,6 +331,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Cuando**: asigno un estudiante del curso a un grupo especifico
 - **Y**: el estudiante ya forma parte de otro grupo del curso
 - **Entonces**: el sistema debe mostrar un mensaje de error indicando que ese estudiante ya forma parte de otro grupo dentro del curso y no procesará la asignacion
+
 ---
 
 ## 8. HDU_8: Desasignar estudiante de un grupo dentro del curso
@@ -299,6 +341,13 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Como** | docente viendo la pantalla de gestión de estudiantes de un curso |
 | **Quiero** | desasignar a un estudiante de la lista de estudiantes de un grupo del curso |
 | **Para** | gestionar a los estudiantes que pertenecen al grupo | 
+
+### DoR
+
+- Existe al menos un curso creado
+- Existe al menos un grupo creado dentro de ese curso
+- Existe al menos un estudiante asignado a un grupo del curso
+- El contrato de desasignación conserva al estudiante en la lista general del curso
 
 ### Criterios de aceptación
 
