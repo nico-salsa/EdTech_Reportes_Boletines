@@ -329,6 +329,15 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: el sistema debe notificar que cada instancia debe tener una ponderación mayor al 0%
 - **Y**: el sistema debe permitir que las actividades evaluatorias con ponderación negativa sean editadas
 
+**Criterio 7 - definir programa con instancias de evaluación con nombre duplicado**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opcion de definir un programa
+- **Y**: agrego una lista de instancias evaluatorias
+- **Y**: al menos dos instancias evaluatorias tienen el mismo nombre
+- **Y**: confirmo la definicion del programa
+- **Entonces**: la definicion del programa **no** se debe procesar
+- **Y**: el sistema debe notificar que las instancias definidas no deben contener nombres duplicados
+
 ## 12. HDU_12: Eliminar instancia de evaluacion del programa del curso
 
 | Aspecto | Descripción |
