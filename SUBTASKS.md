@@ -55,3 +55,64 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Rendimiento**: Validar el tiempo de carga de la pantalla de detalle cuando el curso tiene un volumen alto de estudiantes (ej: +50 registros)
 - **Consistencia de Datos**: Realizar pruebas E2E para confirmar que el promedio visualizado en la pantalla coincida exactamente con el cálculo interno de la base de datos.
+
+## HDU_5: Agregar estudiantes a la lista de estudiantes de un curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de casos de prueba**: Definir escenarios de "Primer Registro" (ID nuevo) y "Registro con ID existente" (el estudiante ya se encuentra en el sistema)
+- **Validación de API**: Automatizar pruebas para el endpoint de inscripción, verificando que un POST con ID nuevo devuelva 201 Created y uno con ID existente devuelva el objeto ya persistido
+- **Pruebas de UI**: Verificar que la tabla de estudiantes muestre correctamente la lista de estudiantes con nombre completo asegurando que el diseño sea legible.
+
+#### No funcionales
+- **Integridad**: Validar que si la inscripción al curso falla (ej: por error de red) el estudiante no quede registrado a medias en el sistema global.
+
+## HDU_6: Agregar grupos a un curso creado
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Definir casos para nombres de grupos cortos (1 caracter), largos y con caracteres especiales (como "G-01")
+- **Validación de API**: Automatizar pruebas para el endpoint POST /courses/{id}/groups, verificando respuestas 201 Created y 409 Conflict cuando el nombre ya existe dentro de ese mismo curso
+- **Pruebas de UI**: Verificar que tras crear el grupo, la lista de grupos se actualice sin necesidad de recargar la página
+
+#### No funcionales
+- **Integridad**: Validar que el nuevo grupo quede correctamente vinculado al ID del curso padre en la base de datos
+- **Usabilidad**: Comprobar que el resaltado de campos vacíos sea accesible y desaparezca inmediatamente al empezar a escribir
+
+## HDU_7: Asignar estudiante a un grupo dentro de un curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Definir flujos para asignación simple, re-asignación fallida (mismo grupo) y conflicto de pertenencia (otro grupo)
+- **Validación de API**: Automatizar pruebas para el endpoint de vinculación, verificando respuestas 200 OK (éxito) y 409 Conflict cuando se violan las reglas de exclusivida
+- **Pruebas de UI**: Verificar que los grupos se actualicen correctamente luego de una asignación, y que los mensajes de error sean claros para el docente
+
+#### No funcionales
+- **Usabilidad**: Comprobar que en la vista de "Estudiantes por Grupo", solo aparezcan aquellos que fueron asignados realmente, sin de datos de otros grupos
+
+## HDU_8: Desasignar estudiante de un grupo dentro del curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Validar desasignación de un estudiante único, desasignación masiva y el estado de la lista del grupo tras la acción (debe quedar vacía si era el último por ejemplo)
+- **Validación de API**: Automatizar pruebas para el endpoint DELETE o de desvinculación, verificando código 200 OK o 204 No Content
+- **Pruebas de UI**: Confirmar que el estudiante desaparece de la vista filtrada por grupo pero se mantiene visible en la vista "Todos los estudiantes" del curso
+
+#### No funcionales
+- **Integridad de Datos**: Validar en base de datos que el campo grupo_id del estudiante pase a NULL sin afectar sus notas o asistencia registradas en el curso
+
+## HDU_9: Eliminar grupo dentro de un curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Definir flujos para eliminación de grupo vacío, eliminación con confirmación y cancelación del proceso 
+- **Validación de API**: Automatizar pruebas para el endpoint DELETE, verificando que el código 200 OK o 204 No Content se reciba tras la confirmación
+- **Pruebas de UI**: Verificar que el modal de advertencia aparezca solo cuando el grupo tiene estudiantes y que la lista de grupos se actualice visualmente tras la eliminación.
+
+#### No funcionales
+- **Integridad de Datos**: Validar en base de datos que al borrar el grupo, los registros de los estudiantes pasen a grupo_id = NULL automáticamente, que no se borren de la tabla Estudiantes y que los estudiantes mantengan su vínculo con el curso
