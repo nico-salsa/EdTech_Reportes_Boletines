@@ -31,6 +31,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Seguridad (Autenticación)**: Validar que tras un inicio de sesión exitoso, el sistema genere y almacene un token de sesión seguro y no exponga la contraseña en la URL o en logs
 - **Usabilidad de Errores**: Comprobar que el mensaje de error para credenciales inválidas sea genérico (ej: "Usuario o contraseña incorrectos") para no dar pistas sobre qué dato falló específicamente.
 
+## HDU_3: Crear nuevo curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Definir flujos para nombres de cursos con caracteres especiales, longitudes máximas y espacios en blanco al inicio/final
+- **Validación de API**: Automatizar pruebas para los métodos POST (crear) y PUT (editar), verificando respuestas 201 Created (éxito), 409 Conflict (duplicado) y 400 Bad Request (título vacío)
+- **Pruebas de UI**: Verificar que tras la creación exitosa, el usuario sea redirigido a la vista del nuevo curso o que este aparezca inmediatamente en el listado de la página principal
+
+#### No funcionales
+- **Consistencia en Modificación**: Validar que al editar el título de un curso, todos los estudiantes y grupos previamente asignados mantengan su vínculo correctamente
+
 ## HDU_4: Consultar curso
 
 ### Tareas de Calidad (QA)
