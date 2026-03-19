@@ -384,8 +384,11 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: el sistema debe permitir que las actividades evaluatorias con ponderación negativa sean editadas
 
 ## 14. HDU_14: registrar nota de una instancia de evaluacion del programa a un estudiante del curso
+> [!NOTE]
+> Diseño de Calificación Abierto: Se ha optado por no imponer un límite superior en la escala de notas para garantizar que el sistema sea compatible con diversos modelos académicos (escalas 1-10, 1-12, 1-100, etc.). La única restricción técnica es que el valor debe ser numérico y mayor o igual a 0. 
+
 > [!TIP]
-> regla de oro: las notas 'nulas' o 'vacías' equivalen a una nota de 0 para el cálculo de los promedios de los estudiantes
+> Regla de oro: las notas 'nulas' o 'vacías' equivalen a una nota de 0 para el cálculo de los promedios de los estudiantes
 
 | Aspecto | Descripción |
 |---------|-------------|
