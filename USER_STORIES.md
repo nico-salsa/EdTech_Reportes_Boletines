@@ -519,7 +519,12 @@ Se considera una serie de reglas para todas las historias de usuario:
 |---------|-------------|
 | **Como** | docente viendo la pantalla de detalle del curso |
 | **Quiero** | editar el programa del curso |
-| **Para** | eliminar instancias evaluatorias del curso | 
+| **Para** | eliminar instancias evaluatorias del curso |
+
+### DoR
+
+- Existe al menos un programa definido el curso con su respectiva instancia evaluatoria
+- El contrato de edición del programa valida suma exacta de ponderaciones igual a 100% después de eliminar una instancia
 
 ### Criterios de aceptación
 
@@ -620,6 +625,10 @@ Se considera una serie de reglas para todas las historias de usuario:
 | **Quiero** | registrar la nota de una instancia de evaluacion de un estudiante |
 | **Para** | llevar un registro de las notas del estudiante y su promedio | 
 
+### DoR
+
+- el contrato de registro de notas rechaza valores alfanuméricos y símbolos
+
 ### Criterios de aceptación
 
 **Criterio 1 - registrar una nota de una instancia de evaluacion del estudiante exitosamente**
@@ -661,6 +670,11 @@ Se considera una serie de reglas para todas las historias de usuario:
 | **Como** | docente viendo la pantalla de detalle del curso |
 | **Quiero** | generar un boletín reflejando las notas y promedio de un estudiante del curso |
 | **Para** | descargar los boletines academicos de los estudiantes en distintos formatos | 
+
+### DoR
+
+- Los formatos de descarga de boletín existen y funcionan
+- El contrato de generación de boletín contempla un escenarios por notas vacías
 
 ### Criterios de aceptación
 
@@ -713,6 +727,11 @@ Se considera una serie de reglas para todas las historias de usuario:
 | **Quiero** | dar de baja a un estudiante del curso |
 | **Para** | gestionar la lista de estudiantes del curso | 
 
+### DoR
+
+- El contrato de baja del estudiante conserva el estudiante en el sistema
+- El contrato de baja del estudiante elimina las notas del curso cuando el estudiante ya tenía alguna nota registrada
+
 ### Criterios de aceptación
 
 **Criterio 1 - dar de baja a un estudiante del curso sin notas registradas**
@@ -739,6 +758,11 @@ Se considera una serie de reglas para todas las historias de usuario:
 | **Como** | docente viendo el directorio de estudiantes |
 | **Quiero** | editar la información personal de un estudiante registrado |
 | **Para** | corregir errores de registro de forma centralizada | 
+
+### DoR
+
+- Existe un directorio de estudiantes
+- El contrato de actualización valida ID duplicado y campos obligatorios
 
 ### Criterios de aceptación
 
@@ -771,6 +795,10 @@ Se considera una serie de reglas para todas las historias de usuario:
 | **Como** | docente viendo el directorio de estudiantes |
 | **Quiero** | eliminar definitivamente a un estudiante del sistema |
 | **Para** | limpiar la base de datos de registros erróneos o duplicados |
+
+### DoR
+
+- Existe un directorio de estudiantes con almenos 2 estudiantes
 
 ### Criterios de aceptación
 
