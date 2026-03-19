@@ -365,6 +365,10 @@ Se considera una serie de reglas para todas las historias de usuario:
 | **Quiero** | eliminar un grupo dentro del curso |
 | **Para** | gestionar los grupos que tiene el curso | 
 
+### DoR
+
+- El contrato backend contempla confirmación y eliminación con grupo vacío y con estudiantes
+
 ### Criterios de aceptación
 
 **Criterio 1 - eliminar grupo vacío**
@@ -397,6 +401,10 @@ Se considera una serie de reglas para todas las historias de usuario:
 | **Quiero** | actualizar el nombre de un grupo dentro del curso |
 | **Para** | gestionar los grupos que tiene el curso | 
 
+### DoR
+
+- El contrato de actualización valida títulos vacíos y duplicados
+
 ### Criterios de aceptación
 
 **Criterio 1 - actualizar título de un grupo de manera exitosa**
@@ -426,6 +434,13 @@ Se considera una serie de reglas para todas las historias de usuario:
 | **Como** | docente viendo la pantalla de detalle del curso |
 | **Quiero** | definir un programa dentro del curso |
 | **Para** | agregar instancias evaluatorias con un porcentaje de ponderacion determinado | 
+
+### DoR
+
+- El contrato de creación válida que la suma exacta de ponderaciones sea igual al 100% (1)
+- El contrato valida nombre vacío o duplicado
+- El contrato valida ponderación igual a 0 o negativo
+- El contrato incluye la opción de ponderación equitativa
 
 ### Criterios de aceptación
 
