@@ -637,3 +637,35 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Entonces**: el sistema debe de dar de baja al estudiante del curso
 - **Y**: eliminar sus notas de las instancias evaluatorias del curso
 - **Y**: el estudiante que se dió de baja debe permanecer en el sistema
+
+## 18. HDU_18: actualizar información personal de un estudiante
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo el directorio de estudiantes |
+| **Quiero** | editar la información personal de un estudiante registrado |
+| **Para** | corregir errores de registro de forma centralizada | 
+
+### Criterios de aceptación
+
+**Criterio 1 - actualización exitosa del estudiante**
+- **Dado**: que me encuentro en el directorio de estudiantes
+- **Cuando**: selecciono la opción de editar un estudiante
+- **Y**: modifico su Nombre, ID o Correo con formatos válidos
+- **Y**: confirmo los cambios
+- **Entonces**: el sistema debe actualizar la información del estudiante globalmente
+- **Y**: los cambios deben verse reflejados automáticamente en todos los cursos donde el estudiante esté inscrito
+
+**Criterio 2 - actualización con ID duplicado**
+- **Dado**: que me encuentro en el directorio de estudiantes
+- **Cuando**: selecciono la opción de editar un estudiante
+- **Y**: modifico su ID por uno que ya existe en el sistema
+- **Entonces**: el sistema debe mostrar un mensaje de error indicando que el ID ya está en uso
+- **Y**: el sistema no debe proceder con el guardado los cambios
+
+**Criterio 3 - actualización con campo obligatorio vacío**
+- **Dado**: que me encuentro en el directorio de estudiantes
+- **Cuando**: selecciono la opción de editar un estudiante
+- **Y**: modifico su Nombre, ID o Correo dejando el campo vacío
+- **Entonces**: el sistema debe mostrar un mensaje de error indicando los campos vacíos
+- **Y**: el sistema no debe proceder con el guardado los cambios
