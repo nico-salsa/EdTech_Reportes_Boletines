@@ -337,7 +337,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | editar el dentro del curso |
 | **Para** | administrar las instancias evaluatorias del curso | 
 
-**Criterio 1 - eliminar instancia evaluatoria existosamente**
+**Criterio 1 - eliminar instancia evaluatoria exitosamente**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
 - **Cuando**: selecciono la opcion de editar el programa
 - **Y**: elimino una instancia de evaluacion de la lista de instancias del programa
@@ -345,15 +345,42 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias coincide con el 100%
 - **Y**: confirmo la edición del programa
 - **Entonces**: la edicion del programa se debe de procesar
-- **Y**: las instancias evaluatorias deben verse en la pantalla de detalle del curso
+- **Y**: las instancias evaluatorias editadas deben verse en la pantalla de detalle del curso
 
-**Criterio 2 - eliminar instancia evaluatoria y la suma de los porcentajes de ponderación no son exactamente 100%**
+**Criterio 2 - eliminar instancia evaluatoria y la suma de los porcentajes de ponderación no es exactamente del 100%**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
 - **Cuando**: selecciono la opcion de editar el programa
 - **Y**: elimino una instancia de evaluacion de la lista de instancias del programa
 - **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias no coincide exactamente con el 100%
 - **Y**: confirmo la edición del programa
 - **Entonces**: la edicion del programa **no** se debe de procesar
-- **Y**: las instancias evaluatorias deben verse en la pantalla de detalle del curso
 - **Y**: el sistema debe notificar que la suma de porcentajes de ponderacion de las instancias evaluatorias tienen que sumar un total del 100%
 - **Y**: se debe permitir que los porcentajes de ponderación se actualicen para lograr que la suma de estos sea del 100%
+
+**Criterio 3 - actualizar los porcentajes de ponderacion de las instancias de evaluacion del curso exitosamente**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opcion de editar el programa
+- **Y**: edito la ponderación de una instancia de evaluacion de la lista de instancias del programa
+- **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias coincide exactamente con el 100%
+- **Y**: confirmo la edición del programa
+- **Entonces**: la edicion del programa se debe de procesar
+- **Y**: las instancias evaluatorias deben verse en la pantalla de detalle del curso
+
+**Criterio 4 - actualizar los porcentajes de ponderacion de las instancias de evaluacion del curso cuya suma no es exactamente del 100%**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opcion de editar el programa
+- **Y**: edito la ponderación de una instancia de evaluacion de la lista de instancias del programa
+- **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias **no es** exactamente del 100%
+- **Y**: confirmo la edición del programa
+- **Entonces**: la edicion del programa **no** se debe de procesar
+- **Y**: el sistema debe notificar que la suma de porcentajes de ponderacion de las instancias evaluatorias tienen que sumar un total del 100%
+- **Y**: se debe permitir que los porcentajes de ponderación se actualicen para lograr que la suma de estos sea del 100%
+
+**Criterio 5 - actualizar el nombre de las instancias de evaluacion del curso exitosamente**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opcion de editar el programa
+- **Y**: edito el nombre de una instancia de evaluacion de la lista de instancias del programa
+- **Y**: el nuevo nombre **no** se encuentra vacío
+- **Y**: confirmo la edición del programa
+- **Entonces**: la edicion del programa se debe de procesar
+- **Y**: las instancias evaluatorias editadas deben verse en la pantalla de detalle del curso
