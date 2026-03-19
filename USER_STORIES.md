@@ -297,6 +297,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | actualizar el nombre de un grupo dentro del curso |
 | **Para** | gestionar los grupos que tiene el curso | 
 
+### Criterios de aceptación
+
 **Criterio 1 - actualizar título de un grupo de manera exitosa**
 - **Dado**: que me encuentro en la pantalla de gestion de estudiantes de un curso
 - **Cuando**: actualizo el titulo de un grupo dentro del curso
@@ -324,6 +326,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Como** | docente viendo la pantalla de detalle del curso |
 | **Quiero** | definir un programa dentro del curso |
 | **Para** | agregar instancias evaluatorias con un porcentaje de ponderacion determinado | 
+
+### Criterios de aceptación
 
 **Criterio 1 - definir programa existosamente**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
@@ -402,6 +406,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | editar el programa del curso |
 | **Para** | eliminar instancias evaluatorias del curso | 
 
+### Criterios de aceptación
+
 **Criterio 1 - eliminar instancia evaluatoria exitosamente**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
 - **Cuando**: selecciono la opcion de editar el programa
@@ -430,6 +436,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Como** | docente viendo la pantalla de detalle del curso |
 | **Quiero** | editar el programa del curso |
 | **Para** | actualizar instancias evaluatorias del curso | 
+
+### Criterios de aceptación
 
 **Criterio 1 - actualizar los porcentajes de ponderacion de las instancias de evaluacion del curso exitosamente**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
@@ -497,6 +505,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | registrar la nota de una instancia de evaluacion de un estudiante |
 | **Para** | llevar un registro de las notas del estudiante y su promedio | 
 
+### Criterios de aceptación
+
 **Criterio 1 - registrar una nota de una instancia de evaluacion del estudiante exitosamente**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
 - **Cuando**: selecciono la opción de registrar nota de una instancia de evaluacion a un estudiante
@@ -537,6 +547,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | generar un boletín reflejando las notas y promedio de un estudiante del curso |
 | **Para** | descargar los boletines academicos de los estudiantes en distintos formatos | 
 
+### Criterios de aceptación
+
 **Criterio 1 - generar boletín de un estudiante del curso**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
 - **Cuando**: selecciono la opción de generar boletin de un estudiante del curso
@@ -559,6 +571,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Como** | docente viendo la pantalla de detalle del curso |
 | **Quiero** | generar un reporte consolidado de calificaciones de todos los estudiantes |
 | **Para** | analizar el rendimiento grupal y descargar el acta de notas final | 
+
+### Criterios de aceptación
 
 **Criterio 1 - generar reporte consolidado exitosamente**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
