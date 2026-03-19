@@ -2,6 +2,11 @@
 
 A continuación dejamos la constancia de las historias de usuario redactadas para este proyecto.
 
+> [!NOTE]
+> Estas historias de usuario están pensadas para principalmente la fase Backend.
+> DoR significa "Definition of Ready"
+> DoD significa "Definition of Done"
+
 ---
 
 ## 0.1. HDU_T1: Definir base frontend de la historia funcional
@@ -66,6 +71,13 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | registrarme con mis credenciales: nombre de usuario y contraseña |
 | **Para** | registrarme en el sistema |
 
+### DoR
+
+- Existe la pantalla de registro (mockup)
+- El contrato para registrar el usuario con `nombre de usuario` y `contraseña` está definido.
+- La respuesta de error para campos vacío está definido
+- La respuesta de error para nombre de usuario duplicado está definido
+
 ### Criterios de aceptación
 
 **Criterio 1 - Registro exitoso**
@@ -81,7 +93,14 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 **Criterio 3 - Registro duplicado**
 - **Dado**: que ingreso un nombre de usuario ya registrado
 - **Cuando**: confirmo la información
-- **Entonces**: el sistema debe mostrar un mensaje de error indicando que dicho nombre de usuario ya se encuentra registrado y no finalizar el registro
+- **Entonces**: el sistema debe mostrar un mensaje de error indicando que dicho nombre de usuario ya se encuentra registrado y no finalizar el registro+
+
+### DoD
+
+- Un docente puede registrarse enviando `nombre de usuario` y `contraseña`
+- Si `nombre de usuario` o `contraseña` están vacíos, el sistema no registra al docente y muestra qué campo obligatorio falta
+- Si `nombre de usuario` ya existe, el sistema no registra al docente y muestra mensaje de usuario ya existente con ese nombre
+- El registro exitoso deja al usuario creado en el sistema
 
 ---
 
