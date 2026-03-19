@@ -355,7 +355,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Entonces**: la edicion del programa **no** se debe de procesar
 - **Y**: el sistema debe notificar que la suma de porcentajes de ponderacion de las instancias evaluatorias tienen que sumar un total del 100%
 
-## 13. HDU_13: Eliminar instancia de evaluacion del programa del curso
+## 13. HDU_13: Actualizar instancia de evaluacion del programa del curso
 
 | Aspecto | Descripción |
 |---------|-------------|
