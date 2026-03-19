@@ -143,3 +143,16 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Usabilidad de la Ponderación automática**: Comprobar que al activar la "Ponderación Equitativa", los campos de entrada se deshabiliten o se actualicen visualmente de forma inmediata para dar feedback al docente
 - **Precisión Aritmética**: Validar que el sistema use tipos de datos decimales de alta precisión (como BigDecimal en Java) para evitar errores de redondeo acumulados en los promedios ponderados
+
+## HDU_12: Eliminar instancia de evaluacion del programa del curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Escenarios donde se elimina una instancia y se redistribuye el peso manualmente vs. uso de la función equitativa
+- **Validación de API**: Automatizar pruebas para el endpoint PUT o PATCH del programa, verificando que el servidor rechace la solicitud si la llamada resultante no suma exactamente 100%
+- **Pruebas de UI**: Verificar que al eliminar la instancia, la interfaz notifique visualmente el "deficit" de porcentaje pendiente por asignar para alcanzar el 100%
+
+#### No funcionales
+- **Integridad de Datos**: Validar que las notas ya registradas de los estudiantes en esa instancia sean eliminadas
+- **Consistencia de Calculos**: Verificar que el Promedio de los estudiantes se actualice inmediatamente en toda la plataforma tras confirmar la eliminación y redistribución de pesos
