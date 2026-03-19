@@ -55,3 +55,15 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Rendimiento**: Validar el tiempo de carga de la pantalla de detalle cuando el curso tiene un volumen alto de estudiantes (ej: +50 registros)
 - **Consistencia de Datos**: Realizar pruebas E2E para confirmar que el promedio visualizado en la pantalla coincida exactamente con el cálculo interno de la base de datos.
+
+## HDU_5: Agregar estudiantes a la lista de estudiantes de un curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de casos de prueba**: Definir escenarios de "Primer Registro" (ID nuevo) y "Registro con ID existente" (el estudiante ya se encuentra en el sistema)
+- **Validación de API**: Automatizar pruebas para el endpoint de inscripción, verificando que un POST con ID nuevo devuelva 201 Created y uno con ID existente devuelva el objeto ya persistido
+- **Pruebas de UI**: Verificar que la tabla de estudiantes muestre correctamente la lista de estudiantes con nombre completo asegurando que el diseño sea legible.
+
+#### No funcionales
+- **Integridad**: Validar que si la inscripción al curso falla (ej: por error de red) el estudiante no quede registrado a medias en el sistema global.
