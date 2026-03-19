@@ -171,13 +171,15 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Dado**: que me encuentro en la pantalla de gestion de estudiantes
 - **Cuando**: ingreso un estudiante con un ID nuevo
 - **Y**: relleno la información personal obligatoria del estudiante (ID, Nombre completo, Correo)
-- **Entonces**: debo de poder ver al estudiante en la lista de estudiantes del curso, y el estudiante debe quedar registrado en el sistema
+- **Entonces**: debo de poder ver al estudiante en la lista de estudiantes del curso
+- **Y**: el estudiante debe quedar registrado en el sistema
 
 **Criterio 2 - Agregar estudiante a la lista de estudiantes del curso con campos obligatorios vacíos**
 - **Dado**: que me encuentro en la pantalla de gestion de estudiantes
 - **Cuando**: ingreso un estudiante con un ID nuevo
 - **Y**: relleno la información personal obligatoria del estudiante de forma incompleta (ID, Nombre completo, Correo)
-- **Entonces**: el estudiante no se debe agregar a la lista de estudiantes del curso, y no se procesará la creacion del estudiante en el sistema
+- **Entonces**: el estudiante no se debe agregar a la lista de estudiantes del curso
+- **Y** no se procesará la creacion del estudiante en el sistema
 
 **Criterio 3 - Agregar estudiante existente a la lista de estudiantes del curso**
 - **Dado**: que me encuentro en la pantalla de gestion de estudiantes
