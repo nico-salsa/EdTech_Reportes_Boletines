@@ -345,6 +345,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias coincide con el 100%
 - **Y**: confirmo la edición del programa
 - **Entonces**: la edicion del programa se debe de procesar
+- **Y**: la instancia eliminada ya no debe aparecer en la pantalla de detalle
 
 **Criterio 2 - eliminar instancia evaluatoria y la suma de los porcentajes de ponderación no es exactamente del 100%**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
@@ -370,6 +371,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias coincide exactamente con el 100%
 - **Y**: confirmo la edición del programa
 - **Entonces**: la edicion del programa se debe de procesar
+- **Y**: la modificación debe reflejarse en la pantalla de detalle
 
 **Criterio 2 - actualizar los porcentajes de ponderacion de las instancias de evaluacion del curso cuya suma no es exactamente del 100%**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
@@ -413,4 +415,4 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: el nuevo nombre ya se encuentra en la lista de instancias de evaluacion del programa
 - **Y**: confirmo la edición del programa
 - **Entonces**: la edicion del programa **no** se debe de procesar
-- **Y**: el sistema debe resaltar los repetidos
+- **Y**: el sistema debe resaltar los nombres repetidos
