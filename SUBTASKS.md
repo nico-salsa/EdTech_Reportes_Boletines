@@ -156,3 +156,17 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad de Datos**: Validar que las notas ya registradas de los estudiantes en esa instancia sean eliminadas en la BD
 - **Consistencia de Calculos**: Verificar que el Promedio de los estudiantes se actualice inmediatamente en toda la plataforma tras confirmar la eliminación y redistribución de pesos
+
+## HDU_13: Actualizar instancia de evaluacion del programa del cursoo
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Escenarios de edición de nombres, pesos válidos e inválidos (0, negativos, >100%)
+- **Validación de API**: Automatizar pruebas para el endpoint PUT, verificando que el servidor bloquee duplicado de nombres y sumas != 100% 
+- **Pruebas de UI**: Verificar que el sistema resalte visualmente los campos con error (vacíos o duplicados) antes de permitir el envío al backend
+
+#### No funcionales
+- **Prueba de Integridad (Recálculo)**: Validar que tras cambiar una ponderación (ej: de 20% a 30%), las notas de todos los estudiantes se actualicen
+- **Prueba de estres del rendimiento**: Simular la actualización de pesos en un curso con 100 estudiantes y 10 instancias evaluatorias para asegurar que el recálculo no bloquee la base de datos o cause un timeout
+- **Atomicidad**: Confirmar que si el recálculo de promedios falla a mitad del proceso, el sistema haga un rollback y mantenga los pesos anteriores
