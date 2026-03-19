@@ -270,7 +270,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Para** | agregar instancias evaluatorias con un porcentaje de ponderacion determinado | 
 
 **Criterio 1 - definir programa existosamente**
-- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Dado**: que me encuenrot en la pantalla de detalle del curso
 - **Cuando**: selecciono la opcion de definir un programa
 - **Y**: agrego una lista de instancias evaluatorias
 - **Y**: asigno un porcentaje de ponderacion a todas las instancias evaluatorias agregadas
@@ -328,3 +328,32 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Entonces**: la definicion del programa no se debe procesar
 - **Y**: el sistema debe notificar que cada instancia debe tener una ponderación mayor al 0%
 - **Y**: el sistema debe permitir que las actividades evaluatorias con ponderación negativa sean editadas
+
+## 12. HDU_12: Editar programa del curso
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de detalle del curso |
+| **Quiero** | editar el dentro del curso |
+| **Para** | administrar las instancias evaluatorias del curso | 
+
+**Criterio 1 - eliminar instancia evaluatoria existosamente**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opcion de editar el programa
+- **Y**: elimino una instancia de evaluacion de la lista de instancias del programa
+- **Y**: actualizo los porcentajes de ponderacion de las instancias del programa
+- **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias coincide con el 100%
+- **Y**: confirmo la edición del programa
+- **Entonces**: la edicion del programa se debe de procesar
+- **Y**: las instancias evaluatorias deben verse en la pantalla de detalle del curso
+
+**Criterio 2 - eliminar instancia evaluatoria y la suma de los porcentajes de ponderación no son exactamente 100%**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opcion de editar el programa
+- **Y**: elimino una instancia de evaluacion de la lista de instancias del programa
+- **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias no coincide exactamente con el 100%
+- **Y**: confirmo la edición del programa
+- **Entonces**: la edicion del programa **no** se debe de procesar
+- **Y**: las instancias evaluatorias deben verse en la pantalla de detalle del curso
+- **Y**: el sistema debe notificar que la suma de porcentajes de ponderacion de las instancias evaluatorias tienen que sumar un total del 100%
+- **Y**: se debe permitir que los porcentajes de ponderación se actualicen para lograr que la suma de estos sea del 100%
