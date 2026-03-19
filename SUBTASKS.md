@@ -154,5 +154,5 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Pruebas de UI**: Verificar que al eliminar la instancia, la interfaz notifique visualmente el "deficit" de porcentaje pendiente por asignar para alcanzar el 100%
 
 #### No funcionales
-- **Integridad de Datos**: Validar que las notas ya registradas de los estudiantes en esa instancia sean eliminadas
+- **Integridad de Datos**: Validar que las notas ya registradas de los estudiantes en esa instancia sean eliminadas en la BD
 - **Consistencia de Calculos**: Verificar que el Promedio de los estudiantes se actualice inmediatamente en toda la plataforma tras confirmar la eliminación y redistribución de pesos
