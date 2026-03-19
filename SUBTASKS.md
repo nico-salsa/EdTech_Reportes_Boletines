@@ -81,3 +81,14 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Integridad**: Validar que el nuevo grupo quede correctamente vinculado al ID del curso padre en la base de datos
 - **Usabilidad**: Comprobar que el resaltado de campos vacíos sea accesible y desaparezca inmediatamente al empezar a escribir
 
+## HDU_7: Asignar estudiante a un grupo dentro de un curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Definir flujos para asignación simple, re-asignación fallida (mismo grupo) y conflicto de pertenencia (otro grupo)
+- **Validación de API**: Automatizar pruebas para el endpoint de vinculación, verificando respuestas 200 OK (éxito) y 409 Conflict cuando se violan las reglas de exclusivida
+- **Pruebas de UI**: Verificar que los grupos se actualicen correctamente luego de una asignación, y que los mensajes de error sean claros para el docente
+
+#### No funcionales
+- **Usabilidad**: Comprobar que en la vista de "Estudiantes por Grupo", solo aparezcan aquellos que fueron asignados realmente, sin de datos de otros grupos
