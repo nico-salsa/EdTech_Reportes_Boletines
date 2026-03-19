@@ -669,3 +669,29 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: modifico su Nombre, ID o Correo dejando el campo vacío
 - **Entonces**: el sistema debe mostrar un mensaje de error indicando los campos vacíos
 - **Y**: el sistema no debe proceder con el guardado los cambios
+
+## 19. HDU_19: eliminar estudiante del sistema (global)
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo el directorio de estudiantes |
+| **Quiero** | eliminar definitivamente a un estudiante del sistema |
+| **Para** | limpiar la base de datos de registros erróneos o duplicados |
+
+### Criterios de aceptación
+
+**Criterio 1 - eliminación definitiva exitosa**
+- **Dado**: que me encuentro en el directorio de estudiantes
+- **Cuando**: selecciono la opción de eliminar a un estudiante
+- **Y**: el sistema muestra una advertencia indicando que se perderán sus notas de todos los cursos
+- **Y**: confirmo la eliminación
+- **Entonces**: el sistema debe borrar el registro del estudiante globalmente
+- **Y**: el estudiante debe desaparecer de todas las listas de cursos donde figuraba previamente
+
+**Criterio 2 - cancelación de la eliminación**
+- **Dado**: que me encuentro en el directorio de estudiantes
+- **Cuando**: selecciono la opción de eliminar a un estudiante
+- **Y**: el sistema muestra una advertencia indicando que se perderán sus notas de todos los cursos
+- **Y**: selecciono la opción de cancelar
+- **Entonces**: el sistema no debe realizar ningún cambio
+- **Y**: el registro del estudiante debe permanecer intacto en el directorio y en sus respectivos cursos
