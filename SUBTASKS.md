@@ -116,3 +116,15 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Integridad de Datos**: Validar en base de datos que al borrar el grupo, los registros de los estudiantes pasen a grupo_id = NULL automáticamente, que no se borren de la tabla Estudiantes y que los estudiantes mantengan su vínculo con el curso
+
+## HDU_10: Actualizar título de un grupo dentro del curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Definir casos para edicion sin cambios (guardar el mismo nombre), cambio exitoso y duplicidad de nombres
+- **Validación de API**: Automatizar pruebas para el endpoint PUT, verificando respuestas 200 OK, 409 Conflict (duplicado) y 400 Bad Request
+- **Pruebas de UI**: Verificar que luego de la edición, todos los componentes que muestran el nombre del grupo se actualicen en tiempo real
+
+#### No funcionales
+- **Integridad de Referencia**: Confirmar que al cambiar el nombre del grupo, los estudiantes asignados a él sigan vinculados al ID interno del grupo
