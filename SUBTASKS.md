@@ -92,3 +92,15 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Usabilidad**: Comprobar que en la vista de "Estudiantes por Grupo", solo aparezcan aquellos que fueron asignados realmente, sin de datos de otros grupos
+
+## HDU_8: Desasignar estudiante de un grupo dentro del curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Validar desasignación de un estudiante único, desasignación masiva y el estado de la lista del grupo tras la acción (debe quedar vacía si era el último por ejemplo)
+- **Validación de API**: Automatizar pruebas para el endpoint DELETE o de desvinculación, verificando código 200 OK o 204 No Content
+- **Pruebas de UI**: Confirmar que el estudiante desaparece de la vista filtrada por grupo pero se mantiene visible en la vista "Todos los estudiantes" del curso
+
+#### No funcionales
+- **Integridad de Datos**: Validar en base de datos que el campo grupo_id del estudiante pase a NULL sin afectar sus notas o asistencia registradas en el curso
