@@ -604,9 +604,36 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 
 **Criterio 2 - advertencia de registros incompletos**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
-- **Y**: que el curso tiene estudiantes registrados y un programa definido.
+- **Y**: que el curso tiene estudiantes registrados y un programa definido
 - **Cuando**: selecciono la opción de generar reporte grupal
 - **Y**: selecciono uno de los formatos disponibles
 - **Y**: existen estudiantes con instancias de evaluación sin calificar (notas nulas)
 - **Entonces**: el sistema debe advertir que el reporte se generará con notas incompletas antes de iniciar la descarga
 - **Y**: el sistema debe descargar un archivo que contenga la lista de todos los estudiantes en filas, con sus respectivas notas en columnas y sus promedios finales en el formato seleccionado
+
+## 17. HDU_17: dar de baja a un estudiante del curso
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | docente viendo la pantalla de detalle del curso |
+| **Quiero** | dar de baja a un estudiante del curso |
+| **Para** | gestionar la lista de estudiantes del curso | 
+
+### Criterios de aceptación
+
+**Criterio 1 - dar de baja a un estudiante del curso sin notas registradas**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Y**: que el curso tiene estudiantes registrados
+- **Cuando**: selecciono la opción de dar de baja a un estudiante
+- **Y**: confirmo la baja del estudiante
+- **Entonces**: el sistema debe de dar de baja al estudiante del curso
+- **Y**: el estudiante que se dió de baja debe permanecer en el sistema
+
+**Criterio 2 - dar de baja a un estudiante del curso con notas registradas**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Y**: que el curso tiene estudiantes registrados
+- **Cuando**: selecciono la opción de dar de baja a un estudiante
+- **Y**: confirmo la baja del estudiante
+- **Entonces**: el sistema debe de dar de baja al estudiante del curso
+- **Y**: eliminar sus notas de las instancias evaluatorias del curso
+- **Y**: el estudiante que se dió de baja debe permanecer en el sistema
