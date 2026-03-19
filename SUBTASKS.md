@@ -128,3 +128,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Integridad de Referencia**: Confirmar que al cambiar el nombre del grupo, los estudiantes asignados a él sigan vinculados al ID interno del grupo
+
+## HDU_11: Definir programa del curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+
+- **Analisis de valores límite**: Crear casos para el anális de valores límite, para sumas exactas (100%), por debajo (99.9%) y por encima (100.1%)
+- **Validación de Algoritmo Equitativo**: Probar la división de los porcentajes con números impares (ej: 3 instancias = 33.33%, 33.33%, 33.34%) para verificar cómo el sistema maneja estos casos
+- **Automatización de API**: Validar que el método POST rechace payloads con nombres duplicados, pesos menores o iguales a 0, nombres vacíos o campos con datos inválidos (como alfanuméricos en los porcentajes de ponderacion por ejemplo)
+- **Pruebas de UI**: Verificar que los mensajes de error sean específicos y no bloqueen la edición (que se permita al usuario corregir los datos erróneos)
+
+#### No funcionales
+- **Usabilidad de la Ponderación automática**: Comprobar que al activar la "Ponderación Equitativa", los campos de entrada se deshabiliten o se actualicen visualmente de forma inmediata para dar feedback al docente
+- **Precisión Aritmética**: Validar que el sistema use tipos de datos decimales de alta precisión (como BigDecimal en Java) para evitar errores de redondeo acumulados en los promedios ponderados
