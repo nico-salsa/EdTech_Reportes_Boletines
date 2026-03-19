@@ -4,7 +4,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 
 ---
 
-## 0.1. HDU_T1: Definr base frontend de la historia funcional
+## 0.1. HDU_T1: Definir base frontend de la historia funcional
 
 | Aspecto | Descripción |
 |---------|-------------|
@@ -23,6 +23,40 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Dado**: que la historia que voy a desarrollar tiene interacción con el usuario
 - **Cuando**: se revisa su diseño funcional
 - **Entonces**: deben estar definidos al menos el estado inicial, el estado exitoso y los estados intermedios definidos por la historia
+
+---
+
+## 0.2. HDU_T2: Definir contrato backend
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | equipo de desarrollo
+| **Quiero** | dejar definido el contrato backend de una historia funcional |
+| **Para** | implementar la historia sin inconsistencias entre frontend, lógica y persistencia de datos |
+
+### Criterios de aceptación
+
+**Criterio 1 - Endpoint definido**
+- **Dado**: que una historia requiere backend
+- **Cuando**: se revisa el diseño técnico
+- **Entonces**: debe quedar definida la ruta del endpoint, su nomenclatura y el llamado (verbo) HTTP correspondiente
+
+**Criterio 2 - Request definido**
+- **Dado**: que estoy revisando un endpoint definido
+- **Cuando**: se revisa el contrato de entrada
+- **Entonces**: debo encontrar definidos los campos de la solicitud, especificando cuáles son obligatorios y cuál es su formato esperado
+
+**Criterio 3 - Response definido**
+- **Dado**: que estoy revisando un endpoint ya definido
+- **Cuando**: se revisa el contrato de salida
+- **Entonces**: debo encontrar definido la estructura de la respuesta exitosa
+
+**Criterio 4 - Errores definidos**
+- **Dado**: se contempla fallos de validación y negocio
+- **Cuando**: se revisa el contrato backend
+- **Entonces**: debo observar que están definidos los códigos de respuesta y la estructura de error para: formularios incompletos y creación de objetos con información duplicada
+
+---
 
 ## 1. HDU_1: Registrar usuarios
 
