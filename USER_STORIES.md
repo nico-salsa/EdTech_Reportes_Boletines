@@ -422,6 +422,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: el sistema debe notificar que la suma de porcentajes de ponderacion de las instancias evaluatorias tienen que sumar un total del 100%
 
 ## 13. HDU_13: Actualizar instancia de evaluacion del programa del curso
+> [!IMPORTANT]
+> Integridad de Datos: Al confirmar una actualización de ponderación en un programa que ya posee notas registradas, el sistema debe recalcular automáticamente todos los promedios (ponderados y generales) de los estudiantes del curso para reflejar los nuevos pesos.
 
 | Aspecto | Descripción |
 |---------|-------------|
@@ -481,7 +483,6 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: confirmo la edición del programa
 - **Entonces**: la edicion del programa **no** se debe de procesar
 - **Y**: el sistema debe resaltar los nombres repetidos
-- **Y**: el sistema debe permitir que las actividades evaluatorias con ponderación negativa sean editadas
 
 ## 14. HDU_14: registrar nota de una instancia de evaluacion del programa a un estudiante del curso
 > [!NOTE]
