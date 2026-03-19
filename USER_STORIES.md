@@ -384,6 +384,8 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: el sistema debe permitir que las actividades evaluatorias con ponderación negativa sean editadas
 
 ## 14. HDU_14: registrar nota de una instancia de evaluacion del programa a un estudiante del curso
+> [!TIP]
+> regla de oro: las notas 'nulas' o 'vacías' equivalen a una nota de 0 para el cálculo de los promedios de los estudiantes
 
 | Aspecto | Descripción |
 |---------|-------------|
