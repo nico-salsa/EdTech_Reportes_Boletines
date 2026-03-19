@@ -4,8 +4,10 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 
 > [!NOTE]
 > Estas historias de usuario están pensadas para principalmente la fase Backend.
-> DoR significa "Definition of Ready"
-> DoD significa "Definition of Done"
+>
+> `DoR` significa "Definition of Ready"
+>
+> `DoD` significa "Definition of Done"
 
 ---
 
@@ -112,6 +114,11 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Quiero** | iniciar sesión con mis credenciales: nombre de usuario y contraseña |
 | **Para** | acceder al sistema |
 
+### DoR
+
+- Existe al menos un usuario registrado para probar el login
+- Está definida las respuestas para campos vacíos y credenciales inválidas
+
 ### Criterios de aceptación
 
 **Criterio 1 - Inicio de sesión válido**
@@ -128,6 +135,12 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Dado**: que relleno el formulario de inicio de sesión con un campo obligatorio vacío
 - **Cuando**: confirmo la información
 - **Entonces**: el sistema debe resaltar el campo faltante y no procesar el inicio de sesión
+
+### DoD
+
+- Si el docente ingresa un `nombre de usuario` y `contraseña` registrados, el sistema permite el aceso a la página principal.
+- Si el docente ingresa credenciales no registradas, el sistema deniega el acceso
+- Ante campo vacío el sistema no procesa el inicio de sesión y resalta el campo faltante
 
 ---
 
