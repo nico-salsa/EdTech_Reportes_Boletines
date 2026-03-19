@@ -4,6 +4,26 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 
 ---
 
+## 0.1. HDU_T1: Definr base frontend de la historia funcional
+
+| Aspecto | Descripción |
+|---------|-------------|
+| **Como** | equipo de desarrollo
+| **Quiero** | dejar definida la base visual y de interacción de una historia funcional |
+| **Para** | poder implementarla en frontend sin ambiguedades |
+
+### Criterios de aceptación
+
+**Criterio 1 - Mockup definido**
+- **Dado**: que voy a desarrollar una historia funcional
+- **Cuando**: se revisa el alcance del frontend
+- **Entonces**: debe existir un mockup, flujo o pantalla base que represente la interacción esperada
+
+**Criterio 2 - Estados de pantalla definidos**
+- **Dado**: que la historia que voy a desarrollar tiene interacción con el usuario
+- **Cuando**: se revisa su diseño funcional
+- **Entonces**: deben estar definidos al menos el estado inicial, el estado exitoso y los estados intermedios definidos por la historia
+
 ## 1. HDU_1: Registrar usuarios
 
 | Aspecto | Descripción |
@@ -270,7 +290,7 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 | **Para** | agregar instancias evaluatorias con un porcentaje de ponderacion determinado | 
 
 **Criterio 1 - definir programa existosamente**
-- **Dado**: que me encuenrot en la pantalla de detalle del curso
+- **Dado**: que me encuentro en la pantalla de detalle del curso
 - **Cuando**: selecciono la opcion de definir un programa
 - **Y**: agrego una lista de instancias evaluatorias
 - **Y**: asigno un porcentaje de ponderacion a todas las instancias evaluatorias agregadas
@@ -328,100 +348,3 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Entonces**: la definicion del programa no se debe procesar
 - **Y**: el sistema debe notificar que cada instancia debe tener una ponderación mayor al 0%
 - **Y**: el sistema debe permitir que las actividades evaluatorias con ponderación negativa sean editadas
-
-**Criterio 7 - definir programa con instancias de evaluación con nombre duplicado**
-- **Dado**: que me encuentro en la pantalla de detalle del curso
-- **Cuando**: selecciono la opcion de definir un programa
-- **Y**: agrego una lista de instancias evaluatorias
-- **Y**: al menos dos instancias evaluatorias tienen el mismo nombre
-- **Y**: confirmo la definicion del programa
-- **Entonces**: la definicion del programa **no** se debe procesar
-- **Y**: el sistema debe notificar que las instancias definidas no deben contener nombres duplicados
-
-## 12. HDU_12: Eliminar instancia de evaluacion del programa del curso
-
-| Aspecto | Descripción |
-|---------|-------------|
-| **Como** | docente viendo la pantalla de detalle del curso |
-| **Quiero** | editar el programa del curso |
-| **Para** | eliminar instancias evaluatorias del curso | 
-
-**Criterio 1 - eliminar instancia evaluatoria exitosamente**
-- **Dado**: que me encuentro en la pantalla de detalle del curso
-- **Cuando**: selecciono la opcion de editar el programa
-- **Y**: elimino una instancia de evaluacion de la lista de instancias del programa
-- **Y**: actualizo los porcentajes de ponderacion de las instancias del programa
-- **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias coincide con el 100%
-- **Y**: confirmo la edición del programa
-- **Entonces**: la edicion del programa se debe de procesar
-- **Y**: la instancia eliminada ya no debe aparecer en la pantalla de detalle
-
-**Criterio 2 - eliminar instancia evaluatoria y la suma de los porcentajes de ponderación no es exactamente del 100%**
-- **Dado**: que me encuentro en la pantalla de detalle del curso
-- **Cuando**: selecciono la opcion de editar el programa
-- **Y**: elimino una instancia de evaluacion de la lista de instancias del programa
-- **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias no coincide exactamente con el 100%
-- **Y**: confirmo la edición del programa
-- **Entonces**: la edicion del programa **no** se debe de procesar
-- **Y**: el sistema debe notificar que la suma de porcentajes de ponderacion de las instancias evaluatorias tienen que sumar un total del 100%
-
-## 13. HDU_13: Actualizar instancia de evaluacion del programa del curso
-
-| Aspecto | Descripción |
-|---------|-------------|
-| **Como** | docente viendo la pantalla de detalle del curso |
-| **Quiero** | editar el programa del curso |
-| **Para** | actualizar instancias evaluatorias del curso | 
-
-**Criterio 1 - actualizar los porcentajes de ponderacion de las instancias de evaluacion del curso exitosamente**
-- **Dado**: que me encuentro en la pantalla de detalle del curso
-- **Cuando**: selecciono la opcion de editar el programa
-- **Y**: edito la ponderación de una instancia de evaluacion de la lista de instancias del programa
-- **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias coincide exactamente con el 100%
-- **Y**: confirmo la edición del programa
-- **Entonces**: la edicion del programa se debe de procesar
-- **Y**: la modificación debe reflejarse en la pantalla de detalle
-
-**Criterio 2 - actualizar los porcentajes de ponderacion de las instancias de evaluacion del curso cuya suma no es exactamente del 100%**
-- **Dado**: que me encuentro en la pantalla de detalle del curso
-- **Cuando**: selecciono la opcion de editar el programa
-- **Y**: edito la ponderación de una instancia de evaluacion de la lista de instancias del programa
-- **Y**: la suma de los porcentajes de ponderacion de todas las instancias evaluatorias **no es** exactamente del 100%
-- **Y**: confirmo la edición del programa
-- **Entonces**: la edicion del programa **no** se debe de procesar
-- **Y**: el sistema debe notificar que la suma de porcentajes de ponderacion de las instancias evaluatorias tienen que sumar un total del 100%
-
-**Criterio 3 - actualizar los porcentajes de ponderacion de las instancias de evaluacion con ponderación negativa o '0%'**
-- **Dado**: que me encuentro en la pantalla de detalle del curso
-- **Cuando**: selecciono la opcion de editar el programa
-- **Y**: edito la ponderación de una instancia de evaluacion de la lista de instancias del programa con ponderacion menor o igual a 0
-- **Y**: confirmo la edición del programa
-- **Entonces**: la edicion del programa **no** se debe de procesar
-- **Y**: el sistema debe notificar que cada instancia debe de tener una ponderación mayor al 0%
-
-**Criterio 4 - actualizar el nombre de las instancias de evaluacion del curso exitosamente**
-- **Dado**: que me encuentro en la pantalla de detalle del curso
-- **Cuando**: selecciono la opcion de editar el programa
-- **Y**: edito el nombre de una instancia de evaluacion de la lista de instancias del programa
-- **Y**: el nuevo nombre **no** se encuentra vacío
-- **Y**: confirmo la edición del programa
-- **Entonces**: la edicion del programa se debe de procesar
-- **Y**: las instancias evaluatorias editadas deben verse en la pantalla de detalle del curso
-
-**Criterio 5 - actualizar el nombre de las instancias de evaluacion del curso con campo vacío**
-- **Dado**: que me encuentro en la pantalla de detalle del curso
-- **Cuando**: selecciono la opcion de editar el programa
-- **Y**: edito el nombre de una instancia de evaluacion de la lista de instancias del programa
-- **Y**: el nuevo nombre **se encuentra vacío**
-- **Y**: confirmo la edición del programa
-- **Entonces**: la edicion del programa **no** se debe de procesar
-- **Y**: el sistema debe resaltar los nombres vacíos
-
-**Criterio 6 - actualizar el nombre de las instancias de evaluacion con nombre duplicado**
-- **Dado**: que me encuentro en la pantalla de detalle del curso
-- **Cuando**: selecciono la opcion de editar el programa
-- **Y**: edito el nombre de una instancia de evaluacion de la lista de instancias del programa
-- **Y**: el nuevo nombre ya se encuentra en la lista de instancias de evaluacion del programa
-- **Y**: confirmo la edición del programa
-- **Entonces**: la edicion del programa **no** se debe de procesar
-- **Y**: el sistema debe resaltar los nombres repetidos
