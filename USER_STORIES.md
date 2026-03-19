@@ -376,7 +376,16 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: el sistema debe notificar que la suma de porcentajes de ponderacion de las instancias evaluatorias tienen que sumar un total del 100%
 - **Y**: se debe permitir que los porcentajes de ponderación se actualicen para lograr que la suma de estos sea del 100%
 
-**Criterio 5 - actualizar el nombre de las instancias de evaluacion del curso exitosamente**
+**Criterio 5 - actualizar los porcentajes de ponderacion de las instancias de evaluacion con ponderación negativa o '0%'**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opcion de editar el programa
+- **Y**: edito la ponderación de una instancia de evaluacion de la lista de instancias del programa con ponderacion menor o igual a 0
+- **Y**: confirmo la edición del programa
+- **Entonces**: la edicion del programa **no** se debe de procesar
+- **Y**: el sistema debe notificar que cada instancia debe de tener una ponderación mayor al 0%
+- **Y**: el sistema debe permitir que las actividades evaluatorias con ponderación inválida sean editadas
+
+**Criterio 6 - actualizar el nombre de las instancias de evaluacion del curso exitosamente**
 - **Dado**: que me encuentro en la pantalla de detalle del curso
 - **Cuando**: selecciono la opcion de editar el programa
 - **Y**: edito el nombre de una instancia de evaluacion de la lista de instancias del programa
@@ -384,3 +393,13 @@ A continuación dejamos la constancia de las historias de usuario redactadas par
 - **Y**: confirmo la edición del programa
 - **Entonces**: la edicion del programa se debe de procesar
 - **Y**: las instancias evaluatorias editadas deben verse en la pantalla de detalle del curso
+
+**Criterio 7 - actualizar el nombre de las instancias de evaluacion del curso con campo vacío**
+- **Dado**: que me encuentro en la pantalla de detalle del curso
+- **Cuando**: selecciono la opcion de editar el programa
+- **Y**: edito el nombre de una instancia de evaluacion de la lista de instancias del programa
+- **Y**: el nuevo nombre **se encuentra vacío**
+- **Y**: confirmo la edición del programa
+- **Entonces**: la edicion del programa **no** se debe de procesar
+- **Y**: el sistema debe resaltar los nombres vacíos
+- **Y**: el sistema debe permitir que se actualizen los nombres de las instancias de evaluación
