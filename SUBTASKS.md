@@ -67,3 +67,17 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Integridad**: Validar que si la inscripción al curso falla (ej: por error de red) el estudiante no quede registrado a medias en el sistema global.
+
+## HDU_6: Agregar grupos a un curso creado
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de escenarios de prueba**: Definir casos para nombres de grupos cortos (1 caracter), largos y con caracteres especiales (como "G-01")
+- **Validación de API**: Automatizar pruebas para el endpoint POST /courses/{id}/groups, verificando respuestas 201 Created y 409 Conflict cuando el nombre ya existe dentro de ese mismo curso
+- **Pruebas de UI**: Verificar que tras crear el grupo, la lista de grupos se actualice sin necesidad de recargar la página
+
+#### No funcionales
+- **Integridad**: Validar que el nuevo grupo quede correctamente vinculado al ID del curso padre en la base de datos
+- **Usabilidad**: Comprobar que el resaltado de campos vacíos sea accesible y desaparezca inmediatamente al empezar a escribir
+
