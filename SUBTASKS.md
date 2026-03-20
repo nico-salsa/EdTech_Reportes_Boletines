@@ -213,3 +213,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Prueba de estrés**: Validar la generación del reporte en un curso muchos estudiantes (100 por ejemplo) y muchas instancias evaluatorias (10 por ejemplo) para evitar errores de memoria o timeouts
 - **Usabilidad del Layout**: En el formato PDF, verificar que el reporte sea legible si hay muchas columnas
 - **Seguridad de Datos**: Asegurar que el reporte solo incluya estudiantes activos del curso y no filtre datos de otros cursos
+
+## HDU_17: dar de baja a un estudiante del curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de casos de prueba**: Escenarios de baja para estudiantes con 0 notas, con algunas notas y con todas las notas completas.
+- **Validación de API**: Automatizar pruebas para el endpoint de desvinculación DELETE, verificando que el código 200 OK o 204 No Content se reciba tras confirmar
+- **Pruebas de UI**: Confirmar que tras la baja, el estudiante desaparece inmediatamente de la lista del curso y de los selectores de grupos
+- **Verificación de Persistencia Global**: Validar que el estudiante siga siendo consultable en el sistema general (por ejemplo, para inscribirlo en otro curso)
+
+#### No funcionales
+- **PIntegridad de Datos**: Validar directamente en la base de datos que los registros de notas asociados a ese estudiante en ese curso hayan sido eliminados físicamente o marcados como borrados
+- **Consistencia de Reportes**: Verificar que, tras la baja, el reporte grupal (HDU_16) ya no incluya al estudiante, recalculando correctamente cualquier métrica grupal si existiera
+- **Seguridad de Operación**: Asegurar que aparezca un modal de confirmación para evitar bajas accidentales
