@@ -242,3 +242,17 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad Referencial (ID)**: Si el ID es la clave primaria, validar que el cambio de ID en la tabla de Estudiantes actualice correctamente todas las llaves foráneas en las tablas de Notas y Grupos (Update en cascada)
 - **Consistencia de Cache**: Asegurar que el Frontend no muestre información desactualizada tras la edición 
+
+## HDU_19: eliminar estudiante del sistema (global)
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de casos de prueba**: Escenarios de eliminación de un estudiante con notas en múltiples cursos vs. un estudiante sin actividad
+- **Validación de API**: Automatizar pruebas para el endpoint DELETE, verificando que devuelva 200 OK tras la confirmación y 404 Not Found si se intenta borrar dos veces
+- **Prueba de Flujo de Interrupción**: Verificar que al "Cancelar", no se ejecute ninguna petición al backend y el estado de la UI permanezca intacto
+- **Verificación de Desaparición Global**: Validar que el estudiante ya no aparezca en: el Directorio, las listas de Cursos, los Grupos y los Reportes Consolidados
+
+#### No funcionales
+- **Integridad de Datos**: Validar en base de datos que se hayan eliminado los registros relacionados al estudiante para evitar "registros huérfanos"
+- **Seguridad**: Comprobar que el modal de advertencia sea lo suficientemente disruptivo (ej: color rojo, mensaje claro) para evitar errores humanos fatales
