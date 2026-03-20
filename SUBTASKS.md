@@ -386,7 +386,6 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 ---
 
-
 ## HDU_16: generar reporte de calificaciones de todos los estudiantes de un curso
 
 ### Tareas de Calidad (QA)
@@ -401,6 +400,20 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Prueba de estrés**: Validar la generación del reporte en un curso muchos estudiantes (100 por ejemplo) y muchas instancias evaluatorias (10 por ejemplo) para evitar errores de memoria o timeouts
 - **Usabilidad del Layout**: En el formato PDF, verificar que el reporte sea legible si hay muchas columnas
 - **Seguridad de Datos**: Asegurar que el reporte solo incluya estudiantes activos del curso y no filtre datos de otros cursos
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la generación del reporte consolidado del curso
+- Construir la salida con estudiantes en filas
+- Incluir notas por instancia en columnas
+- Incluir promedios finales por estudiante
+- Implementar descarga en los formatos disponibles
+- Detectar notas nulas
+- Emitir advertencia previa por registros incompletos
+
+---
 
 ## HDU_17: dar de baja a un estudiante del curso
 
@@ -417,6 +430,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Consistencia de Reportes**: Verificar que, tras la baja, el reporte grupal (HDU_16) ya no incluya al estudiante, recalculando correctamente cualquier métrica grupal si existiera
 - **Seguridad de Operación**: Asegurar que aparezca un modal de confirmación para evitar bajas accidentales
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la baja del estudiante en el curso
+- Eliminar la relación estudiante-curso
+- Eliminar las notas del estudiante en las instancias del curso cuando existan
+- Conservar el registro global del estudiante
+- Retornar la lista actualizada del curso
+
+---
+
 ## HDU_18: actualizar información personal de un estudiante
 
 ### Tareas de Calidad (QA)
@@ -429,7 +454,19 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Integridad Referencial (ID)**: Si el ID es la clave primaria, validar que el cambio de ID en la tabla de Estudiantes actualice correctamente todas las llaves foráneas en las tablas de Notas y Grupos (Update en cascada)
-- **Consistencia de Cache**: Asegurar que el Frontend no muestre información desactualizada tras la edición 
+- **Consistencia de Cache**: Asegurar que el Frontend no muestre información desactualizada tras la edición
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la actualización global de Nombre, ID y Correo
+- Validar ID no duplicado
+- Validar campos obligatorios no vacíos
+- Persistir la actualización
+- Propagar los cambios a todos los cursos donde el estudiante esté inscrito
+
+---
 
 ## HDU_19: eliminar estudiante del sistema (global)
 
@@ -444,3 +481,14 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad de Datos**: Validar en base de datos que se hayan eliminado los registros relacionados al estudiante para evitar "registros huérfanos"
 - **Seguridad**: Comprobar que el modal de advertencia sea lo suficientemente disruptivo (ej: color rojo, mensaje claro) para evitar errores humanos fatales
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la eliminación global del estudiante
+- Mostrar advertencia previa por pérdida de notas
+- Eliminar al estudiante del directorio
+- Eliminar al estudiante de todos los cursos donde esté inscrito
+- Eliminar las notas asociadas al estudiante
+- Cancelar la operación sin cambios cuando no exista confirmación
