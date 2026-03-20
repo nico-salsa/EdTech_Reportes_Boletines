@@ -42,6 +42,8 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Seguridad (Autenticación)**: Validar que tras un inicio de sesión exitoso, el sistema genere y almacene un token de sesión seguro y no exponga la contraseña en la URL o en logs
 - **Usabilidad de Errores**: Comprobar que el mensaje de error para credenciales inválidas sea genérico (ej: "Usuario o contraseña incorrectos") para no dar pistas sobre qué dato falló específicamente.
 
+### Tareas de Desarrollo (Dev)
+
 #### Funcionales
 
 - Implementar el endpoint de inicio de sesión
@@ -63,6 +65,8 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Consistencia en Modificación**: Validar que al editar el título de un curso, todos los estudiantes y grupos previamente asignados mantengan su vínculo correctamente
+
+### Tareas de Desarrollo (Dev)
 
 #### Funcionales
 
@@ -87,6 +91,8 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Rendimiento**: Validar el tiempo de carga de la pantalla de detalle cuando el curso tiene un volumen alto de estudiantes (ej: +50 registros)
 - **Consistencia de Datos**: Realizar pruebas E2E para confirmar que el promedio visualizado en la pantalla coincida exactamente con el cálculo interno de la base de datos.
 
+### Tareas de Desarrollo (Dev)
+
 #### Funcionales
 
 - Implementar búsqueda de estudiante por ID
@@ -110,6 +116,19 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad**: Validar que si la inscripción al curso falla (ej: por error de red) el estudiante no quede registrado a medias en el sistema global.
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar búsqueda de estudiante por ID.
+- Implementar alta on-the-fly para estudiantes nuevos.
+- Validar ID, Nombre completo y Correo como obligatorios.
+- Persistir el estudiante nuevo.
+- Asociar el estudiante al curso.
+- Retornar datos autocompletados cuando el ID ya exista.
+
+---
+
 ## HDU_6: Agregar grupos a un curso creado
 
 ### Tareas de Calidad (QA)
@@ -123,6 +142,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Integridad**: Validar que el nuevo grupo quede correctamente vinculado al ID del curso padre en la base de datos
 - **Usabilidad**: Comprobar que el resaltado de campos vacíos sea accesible y desaparezca inmediatamente al empezar a escribir
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar el endpoint de creación de grupo
+- Validar nombre de grupo obligatorio
+- Validar unicidad del nombre dentro del curso
+- Persistir el grupo
+- Retornar el grupo creado
+
+---
+
 ## HDU_7: Asignar estudiante a un grupo dentro de un curso
 
 ### Tareas de Calidad (QA)
@@ -134,6 +165,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Usabilidad**: Comprobar que en la vista de "Estudiantes por Grupo", solo aparezcan aquellos que fueron asignados realmente, sin de datos de otros grupos
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la asignación de estudiante a grupo
+- Validar que el estudiante pertenezca al curso
+- Validar que el estudiante no esté repetido en el grupo
+- Validar que el estudiante no pertenezca a otro grupo del mismo curso
+- Persistir la asignación estudiante-grupo
+
+---
 
 ## HDU_8: Desasignar estudiante de un grupo dentro del curso
 
@@ -147,6 +190,16 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad de Datos**: Validar en base de datos que el campo grupo_id del estudiante pase a NULL sin afectar sus notas o asistencia registradas en el curso
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la desasignación de estudiante del grupo
+- Eliminar la relación estudiante-grupo
+- Retornar el estado actualizado del curso
+
+---
+
 ## HDU_9: Eliminar grupo dentro de un curso
 
 ### Tareas de Calidad (QA)
@@ -159,6 +212,16 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad de Datos**: Validar en base de datos que al borrar el grupo, los registros de los estudiantes pasen a grupo_id = NULL automáticamente, que no se borren de la tabla Estudiantes y que los estudiantes mantengan su vínculo con el curso
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la eliminación de grupos con estudiantes bajo confirmación
+- Conservar a los estudiantes en la lista general del curso
+- Cancelar la operación sin cambios cuando no exista confirmación
+
+---
+
 ## HDU_10: Actualizar título de un grupo dentro del curso
 
 ### Tareas de Calidad (QA)
@@ -170,6 +233,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Integridad de Referencia**: Confirmar que al cambiar el nombre del grupo, los estudiantes asignados a él sigan vinculados al ID interno del grupo
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la actualización del título del grupo
+- Validar título no vacío
+- Validar título no duplicado dentro del curso
+- Persistir el nuevo título
+- Retornar el grupo actualizado
+
+---
 
 ## HDU_11: Definir programa del curso
 
