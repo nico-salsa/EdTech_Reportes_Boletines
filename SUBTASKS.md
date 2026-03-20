@@ -170,3 +170,17 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Prueba de Integridad (Recálculo)**: Validar que tras cambiar una ponderación (ej: de 20% a 30%), las notas de todos los estudiantes se actualicen
 - **Prueba de estres del rendimiento**: Simular la actualización de pesos en un curso con 100 estudiantes y 10 instancias evaluatorias para asegurar que el recálculo no bloquee la base de datos o cause un timeout
 - **Atomicidad**: Confirmar que si el recálculo de promedios falla a mitad del proceso, el sistema haga un rollback y mantenga los pesos anteriores
+
+## HDU_14: registrar nota de una instancia de evaluacion del programa a un estudiante del curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de matriz de datos de calificación**: Definir casos para notas enteras, decimales, notas extremadamente altas (límite de capacidad del campo) y el valor exacto 0
+- **Validación de la "Regla de Oro"**: Crear un escenario donde un estudiante tenga 50% de sus notas vacías y verificar que el promedio baje proporcionalmente (confirmando que se tratan como 0)
+- **Automatización de API**: Validar que el endpoint de calificación rechace strings, símbolos y valores negativos (400 Bad Request), y acepte null transformándolo internamente
+- **Pruebas de UI**: Verificar que el resaltado de notas nulas sea visualmente distinto para alertar al docente
+
+#### No funcionales
+- **Precisión Matemática**: Validar que el recálculo del Promedio Ponderado y General ocurra en tiempo real (o tras el guardado) sin errores de redondeo
+- **Atomicidad**: Confirmar que si el recálculo de promedios falla a mitad del procesoo, el sistema haga un rollback y mantenga los pesos anteriores
