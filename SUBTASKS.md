@@ -27,6 +27,8 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - Retornar error por campos vacíos
 - Retornar error por nombre de usuario ya existente
 
+---
+
 ## HDU_2: Iniciar sesión
 
 ### Tareas de Calidad (QA)
@@ -40,6 +42,16 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Seguridad (Autenticación)**: Validar que tras un inicio de sesión exitoso, el sistema genere y almacene un token de sesión seguro y no exponga la contraseña en la URL o en logs
 - **Usabilidad de Errores**: Comprobar que el mensaje de error para credenciales inválidas sea genérico (ej: "Usuario o contraseña incorrectos") para no dar pistas sobre qué dato falló específicamente.
 
+#### Funcionales
+
+- Implementar el endpoint de inicio de sesión
+- Validar nombre de usuario y contraseña como obligatorios
+- Validar credenciales contra usuarios registrados
+- Retornar acceso exitoso.
+- Retornar error por credenciales inválidas
+
+---
+
 ## HDU_3: Crear nuevo curso
 
 ### Tareas de Calidad (QA)
@@ -51,6 +63,16 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Consistencia en Modificación**: Validar que al editar el título de un curso, todos los estudiantes y grupos previamente asignados mantengan su vínculo correctamente
+
+#### Funcionales
+
+- Implementar el endpoint de creación de curso
+- Validar la no repetición del título del curso
+- Persistir el curso
+- Implementar la actualización del título del curso
+- Retornar el curso creado o actualizado
+
+---
 
 ## HDU_4: Consultar curso
 
@@ -64,6 +86,17 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Rendimiento**: Validar el tiempo de carga de la pantalla de detalle cuando el curso tiene un volumen alto de estudiantes (ej: +50 registros)
 - **Consistencia de Datos**: Realizar pruebas E2E para confirmar que el promedio visualizado en la pantalla coincida exactamente con el cálculo interno de la base de datos.
+
+#### Funcionales
+
+- Implementar búsqueda de estudiante por ID
+- Implementar alta on-the-fly para estudiantes nuevos
+- Validar ID, Nombre completo y Correo como obligatorios
+- Persistir el estudiante nuevo
+- Asociar el estudiante al curso
+- Retornar datos autocompletados cuando el ID ya exista
+
+---
 
 ## HDU_5: Agregar estudiantes a la lista de estudiantes de un curso
 
