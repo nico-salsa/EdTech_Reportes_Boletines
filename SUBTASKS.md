@@ -18,6 +18,15 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 ### Tareas de Desarrollo (Dev)
 
+#### Funcionales
+
+- Implementar el endpoint de registro de usuario
+- Validar `nombre de usuario` y `contraseña` como obligatorios
+- Validar exclusividad (no repetición) de `nombre de usuario`
+- Persistir el usuario
+- Retornar error por campos vacíos
+- Retornar error por nombre de usuario ya existente
+
 ## HDU_2: Iniciar sesión
 
 ### Tareas de Calidad (QA)
