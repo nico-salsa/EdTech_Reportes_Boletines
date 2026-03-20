@@ -106,7 +106,7 @@ Una vez creada la tabla, cada estudiante tendra su fila con las siguientes colum
 - Corrupcion de archivos (que el archivo PDF, HTML o JSON se genere incompleto o con errores)
 
 
-## 3 Plan de mitigación de riesgos
+## 3 Plan de mitigación de riesgos aplicado
 
 ### 3.1 Riesgos del Negocio
 
@@ -146,3 +146,54 @@ Restricción de visibilidad. Las notas y promedios se recalculan y muestran bajo
 
 * HDU_14
 * HDU_15
+
+### 3.2 Riesgos Técnicos
+
+#### Riesgo 1: 
+Inconsistencia en exportación
+
+#### Estrategia de Mitigación:
+
+Validación de Integridad en Boletines. Se implementó una advertencia obligatoria que detecta "notas vacías" antes de generar el archivo, asegurando que el docente sepa qué datos se están imprimiendo
+
+#### Referencia Técnica:
+
+* HDU_15
+* HDU_16
+
+#### Riesgo 2: 
+Precisión de promedios
+
+#### Estrategia de Mitigación:
+
+Regla de Oro de notas nulas, para evitar errores de cálculo o promedios inflados, el sistema trata técnicamente las notas vacías como 0, garantizando coherencia matemática
+
+#### Referencia Técnica:
+
+* HDU_14
+
+#### Riesgo 3: 
+Suma de ponderación != 100%
+
+#### Estrategia de Mitigación:
+
+Validación de Cierre de Programa. El contrato de creación y edición del programa bloquea el guardado si la suma de las instancias evaluatorias no es exactamente el 100%
+
+#### Referencia Técnica:
+
+* HDU_11
+* HDU_12 
+* HDU_13
+
+#### Riesgo 4: 
+Corrupción de archivos
+
+#### Estrategia de Mitigación:
+
+Formatos estándar y pre-validados. El sistema utiliza contratos de registro que rechazan caracteres alfanuméricos en las notas para asegurar que el motor de generación de PDF/JSON reciba solo datos limpios
+
+#### Referencia Técnica:
+
+* HDU_14 
+* HDU_15
+* HDU_16
