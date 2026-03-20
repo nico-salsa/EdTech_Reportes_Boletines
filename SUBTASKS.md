@@ -289,6 +289,8 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Integridad de Datos**: Validar que las notas ya registradas de los estudiantes en esa instancia sean eliminadas en la BD
 - **Consistencia de Calculos**: Verificar que el Promedio de los estudiantes se actualice inmediatamente en toda la plataforma tras confirmar la eliminación y redistribución de pesos
 
+### Tareas de Desarrollo (Dev)
+
 #### Funcionales
 
 - Implementar la edición del programa para eliminar instancias
@@ -313,6 +315,21 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Prueba de estres del rendimiento**: Simular la actualización de pesos en un curso con 100 estudiantes y 10 instancias evaluatorias para asegurar que el recálculo no bloquee la base de datos o cause un timeout
 - **Atomicidad**: Confirmar que si el recálculo de promedios falla a mitad del proceso, el sistema haga un rollback y mantenga los pesos anteriores
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar edición de nombre de instancia
+- Implementar edición de ponderación de instancia
+- Validar nombre no vacío
+- Validar nombre no duplicado
+- Validar ponderación mayor a 0
+- Validar suma exacta igual a 100%
+- Recalcular promedios ponderados y generales cuando cambie una ponderación y existan notas registradas
+- Persistir el programa actualizado
+
+---
+
 ## HDU_14: registrar nota de una instancia de evaluacion del programa a un estudiante del curso
 
 ### Tareas de Calidad (QA)
@@ -327,6 +344,21 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Precisión Matemática**: Validar que el recálculo del Promedio Ponderado y General ocurra en tiempo real (o tras el guardado) sin errores de redondeo
 - **Atomicidad**: Confirmar que si el recálculo de promedios falla a mitad del procesoo, el sistema haga un rollback y mantenga los pesos anteriores
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar el registro de nota por estudiante e instancia
+- Validar que la nota sea numérica
+- Rechazar notas negativas
+- Aceptar notas nulas
+- Tratar la nota nula como 0 para el cálculo de promedios
+- Recalcular promedio ponderado
+- Recalcular promedio general
+- Persistir nota y promedios actualizados
+
+---
+
 ## HDU_15: generar boletín del estudiante de un curso
 
 ### Tareas de Calidad (QA)
@@ -340,6 +372,20 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Diseño y Layout**: Asegurar que en formatos como PDF el contenido no se "corte" si el nombre del estudiante es muy largo o si hay muchas instancias evaluatorias
 - **Rendimiento de Generación**: Medir el tiempo de respuesta desde el "clic" hasta que inicia la descarga (especialmente en formatos pesados como PDF)
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la generación de boletín por estudiante
+- Construir la salida con datos del estudiante, notas y promedios
+- Implementar descarga en los formatos disponibles
+- Detectar notas vacías
+- Emitir advertencia previa por notas vacías
+- Generar el boletín después de la confirmación
+
+---
+
 
 ## HDU_16: generar reporte de calificaciones de todos los estudiantes de un curso
 
