@@ -198,3 +198,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Diseño y Layout**: Asegurar que en formatos como PDF el contenido no se "corte" si el nombre del estudiante es muy largo o si hay muchas instancias evaluatorias
 - **Rendimiento de Generación**: Medir el tiempo de respuesta desde el "clic" hasta que inicia la descarga (especialmente en formatos pesados como PDF)
+
+## HDU_16: generar reporte de calificaciones de todos los estudiantes de un curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Validación de Estructura de Matriz**: Verificar que las columnas correspondan exactamente a las instancias del programa definido y las filas a la lista completa de estudiantes (sin omisiones)
+- **Prueba de Flujo de Advertencia**: Confirmar que si falta una sola nota en todo el curso, el sistema dispare la alerta de "Registros Incompletos"
+- **Verificación de Cálculos**: Cruzar los promedios finales que aparecen en el reporte grupal contra los promedios individuales de la HDU_15 para asegurar total paridad
+- **Validación de Formatos**: Probar la descarga en PDF (lectura visual), JSON (integridad de datos) y HTML y otros formatos en caso de ser necesario
+
+#### No funcionales
+- **Prueba de estrés**: Validar la generación del reporte en un curso muchos estudiantes (100 por ejemplo) y muchas instancias evaluatorias (10 por ejemplo) para evitar errores de memoria o timeouts
+- **Usabilidad del Layout**: En el formato PDF, verificar que el reporte sea legible si hay muchas columnas
+- **Seguridad de Datos**: Asegurar que el reporte solo incluya estudiantes activos del curso y no filtre datos de otros cursos
