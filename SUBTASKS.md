@@ -261,6 +261,21 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Usabilidad de la Ponderación automática**: Comprobar que al activar la "Ponderación Equitativa", los campos de entrada se deshabiliten o se actualicen visualmente de forma inmediata para dar feedback al docente
 - **Precisión Aritmética**: Validar que el sistema use tipos de datos decimales de alta precisión (como BigDecimal en Java) para evitar errores de redondeo acumulados en los promedios ponderados
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la creación del programa del curso
+- Persistir instancias evaluatorias
+- Persistir la ponderación de cada instancia
+- Validar suma exacta de ponderaciones igual a 100%
+- Validar nombre no vacío
+- Validar nombre no duplicado
+- Validar ponderación mayor a 0
+- Implementar ponderación equitativa
+
+---
+
 ## HDU_12: Eliminar instancia de evaluacion del programa del curso
 
 ### Tareas de Calidad (QA)
@@ -273,6 +288,16 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad de Datos**: Validar que las notas ya registradas de los estudiantes en esa instancia sean eliminadas en la BD
 - **Consistencia de Calculos**: Verificar que el Promedio de los estudiantes se actualice inmediatamente en toda la plataforma tras confirmar la eliminación y redistribución de pesos
+
+#### Funcionales
+
+- Implementar la edición del programa para eliminar instancias
+- Eliminar la instancia seleccionada
+- Actualizar ponderaciones restantes
+- Validar suma exacta igual a 100%
+- Persistir el programa actualizado
+
+---
 
 ## HDU_13: Actualizar instancia de evaluacion del programa del cursoo
 
