@@ -228,3 +228,17 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **PIntegridad de Datos**: Validar directamente en la base de datos que los registros de notas asociados a ese estudiante en ese curso hayan sido eliminados físicamente o marcados como borrados
 - **Consistencia de Reportes**: Verificar que, tras la baja, el reporte grupal (HDU_16) ya no incluya al estudiante, recalculando correctamente cualquier métrica grupal si existiera
 - **Seguridad de Operación**: Asegurar que aparezca un modal de confirmación para evitar bajas accidentales
+
+## HDU_18: actualizar información personal de un estudiante
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Diseño de casos de prueba**: Definir flujos de edición simple (nombre) y edición crítica (cambio de ID o Correo).
+- **Prueba de Propagación**: Inscribir un estudiante en dos cursos diferentes, editar su nombre en el directorio y verificar que el cambio sea visible en ambos cursos sin intervención adicional
+- **Validación de API**: Automatizar pruebas para el endpoint PUT, verificando respuestas 200 OK, 409 Conflict (ID duplicado) y 400 Bad Request (campos vacíos)
+- **Validación de UI**: Verificar que el formulario de edición cargue los datos actuales correctamente y que los mensajes de error sean claros
+
+#### No funcionales
+- **Integridad Referencial (ID)**: Si el ID es la clave primaria, validar que el cambio de ID en la tabla de Estudiantes actualice correctamente todas las llaves foráneas en las tablas de Notas y Grupos (Update en cascada)
+- **Consistencia de Cache**: Asegurar que el Frontend no muestre información desactualizada tras la edición 
