@@ -184,3 +184,17 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Precisión Matemática**: Validar que el recálculo del Promedio Ponderado y General ocurra en tiempo real (o tras el guardado) sin errores de redondeo
 - **Atomicidad**: Confirmar que si el recálculo de promedios falla a mitad del procesoo, el sistema haga un rollback y mantenga los pesos anteriores
+
+## HDU_15: generar boletín del estudiante de un curso
+
+### Tareas de Calidad (QA)
+
+#### Funcionales
+- **Validación de Formatos**: Probar la descarga y apertura correcta en los formatos definidos
+- **Prueba de "Notas Vacías"**: Verificar que el flujo de advertencia se dispare correctamente y que el archivo final muestre la nota como "0" o "N/A" según el diseño, manteniendo el promedio coherente
+- **Integridad de Datos en el Documento**: Asegurar que el Nombre, ID, Notas por Instancia y Promedios en el boletín coincidan al 100% con la base de datos
+- **Pruebas de UI**: Comprobar que el selector de formatos sea intuitivo y que el mensaje de advertencia de notas vacías no bloquee la descarga si el docente decide continuar
+
+#### No funcionales
+- **Diseño y Layout**: Asegurar que en formatos como PDF el contenido no se "corte" si el nombre del estudiante es muy largo o si hay muchas instancias evaluatorias
+- **Rendimiento de Generación**: Medir el tiempo de respuesta desde el "clic" hasta que inicia la descarga (especialmente en formatos pesados como PDF)
