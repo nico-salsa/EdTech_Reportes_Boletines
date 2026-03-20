@@ -104,3 +104,45 @@ Una vez creada la tabla, cada estudiante tendra su fila con las siguientes colum
 - Que el sistema guarde un programa en donde la suma de los porcentajes de ponderación de las actividades evaluatorias definidas no sumen un 100% del curso.
 
 - Corrupcion de archivos (que el archivo PDF, HTML o JSON se genere incompleto o con errores)
+
+
+## 3 Plan de mitigación de riesgos
+
+### 3.1 Riesgos del Negocio
+
+#### Riesgo 1: 
+Curva de aprendizaje elevada
+
+#### Estrategia de Mitigación:
+
+Implementación de registro "On-the-fly". El docente puede crear estudiantes y grupos mientras navega, sin salir de su flujo de trabajo actual
+
+#### Referencia Técnica:
+
+* HDU_5
+* HDU_6
+
+#### Riesgo 2: 
+Duplicidad de datos
+
+#### Estrategia de Mitigación:
+
+Validación de ID único a nivel de base de datos y lógica de negocio. El sistema impide registrar dos veces al mismo alumno en un mismo curso y en el sistema
+
+#### Referencia Técnica:
+
+* HDU_5 
+* HDU_18
+* HDU_19
+
+#### Riesgo 3: 
+Manejo de datos sensibles
+
+#### Estrategia de Mitigación:
+
+Restricción de visibilidad. Las notas y promedios se recalculan y muestran bajo un entorno controlado (Docente-Curso)
+
+#### Referencia Técnica:
+
+* HDU_14
+* HDU_15
