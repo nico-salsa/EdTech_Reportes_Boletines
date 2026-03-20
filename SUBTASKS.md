@@ -18,6 +18,17 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 ### Tareas de Desarrollo (Dev)
 
+#### Funcionales
+
+- Implementar el endpoint de registro de usuario
+- Validar `nombre de usuario` y `contraseña` como obligatorios
+- Validar exclusividad (no repetición) de `nombre de usuario`
+- Persistir el usuario
+- Retornar error por campos vacíos
+- Retornar error por nombre de usuario ya existente
+
+---
+
 ## HDU_2: Iniciar sesión
 
 ### Tareas de Calidad (QA)
@@ -31,6 +42,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Seguridad (Autenticación)**: Validar que tras un inicio de sesión exitoso, el sistema genere y almacene un token de sesión seguro y no exponga la contraseña en la URL o en logs
 - **Usabilidad de Errores**: Comprobar que el mensaje de error para credenciales inválidas sea genérico (ej: "Usuario o contraseña incorrectos") para no dar pistas sobre qué dato falló específicamente.
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar el endpoint de inicio de sesión
+- Validar nombre de usuario y contraseña como obligatorios
+- Validar credenciales contra usuarios registrados
+- Retornar acceso exitoso.
+- Retornar error por credenciales inválidas
+
+---
+
 ## HDU_3: Crear nuevo curso
 
 ### Tareas de Calidad (QA)
@@ -42,6 +65,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Consistencia en Modificación**: Validar que al editar el título de un curso, todos los estudiantes y grupos previamente asignados mantengan su vínculo correctamente
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar el endpoint de creación de curso
+- Validar la no repetición del título del curso
+- Persistir el curso
+- Implementar la actualización del título del curso
+- Retornar el curso creado o actualizado
+
+---
 
 ## HDU_4: Consultar curso
 
@@ -56,6 +91,19 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Rendimiento**: Validar el tiempo de carga de la pantalla de detalle cuando el curso tiene un volumen alto de estudiantes (ej: +50 registros)
 - **Consistencia de Datos**: Realizar pruebas E2E para confirmar que el promedio visualizado en la pantalla coincida exactamente con el cálculo interno de la base de datos.
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar búsqueda de estudiante por ID
+- Implementar alta on-the-fly para estudiantes nuevos
+- Validar ID, Nombre completo y Correo como obligatorios
+- Persistir el estudiante nuevo
+- Asociar el estudiante al curso
+- Retornar datos autocompletados cuando el ID ya exista
+
+---
+
 ## HDU_5: Agregar estudiantes a la lista de estudiantes de un curso
 
 ### Tareas de Calidad (QA)
@@ -67,6 +115,19 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Integridad**: Validar que si la inscripción al curso falla (ej: por error de red) el estudiante no quede registrado a medias en el sistema global.
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar búsqueda de estudiante por ID.
+- Implementar alta on-the-fly para estudiantes nuevos.
+- Validar ID, Nombre completo y Correo como obligatorios.
+- Persistir el estudiante nuevo.
+- Asociar el estudiante al curso.
+- Retornar datos autocompletados cuando el ID ya exista.
+
+---
 
 ## HDU_6: Agregar grupos a un curso creado
 
@@ -81,6 +142,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Integridad**: Validar que el nuevo grupo quede correctamente vinculado al ID del curso padre en la base de datos
 - **Usabilidad**: Comprobar que el resaltado de campos vacíos sea accesible y desaparezca inmediatamente al empezar a escribir
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar el endpoint de creación de grupo
+- Validar nombre de grupo obligatorio
+- Validar unicidad del nombre dentro del curso
+- Persistir el grupo
+- Retornar el grupo creado
+
+---
+
 ## HDU_7: Asignar estudiante a un grupo dentro de un curso
 
 ### Tareas de Calidad (QA)
@@ -92,6 +165,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Usabilidad**: Comprobar que en la vista de "Estudiantes por Grupo", solo aparezcan aquellos que fueron asignados realmente, sin de datos de otros grupos
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la asignación de estudiante a grupo
+- Validar que el estudiante pertenezca al curso
+- Validar que el estudiante no esté repetido en el grupo
+- Validar que el estudiante no pertenezca a otro grupo del mismo curso
+- Persistir la asignación estudiante-grupo
+
+---
 
 ## HDU_8: Desasignar estudiante de un grupo dentro del curso
 
@@ -105,6 +190,16 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad de Datos**: Validar en base de datos que el campo grupo_id del estudiante pase a NULL sin afectar sus notas o asistencia registradas en el curso
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la desasignación de estudiante del grupo
+- Eliminar la relación estudiante-grupo
+- Retornar el estado actualizado del curso
+
+---
+
 ## HDU_9: Eliminar grupo dentro de un curso
 
 ### Tareas de Calidad (QA)
@@ -117,6 +212,16 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad de Datos**: Validar en base de datos que al borrar el grupo, los registros de los estudiantes pasen a grupo_id = NULL automáticamente, que no se borren de la tabla Estudiantes y que los estudiantes mantengan su vínculo con el curso
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la eliminación de grupos con estudiantes bajo confirmación
+- Conservar a los estudiantes en la lista general del curso
+- Cancelar la operación sin cambios cuando no exista confirmación
+
+---
+
 ## HDU_10: Actualizar título de un grupo dentro del curso
 
 ### Tareas de Calidad (QA)
@@ -128,6 +233,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Integridad de Referencia**: Confirmar que al cambiar el nombre del grupo, los estudiantes asignados a él sigan vinculados al ID interno del grupo
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la actualización del título del grupo
+- Validar título no vacío
+- Validar título no duplicado dentro del curso
+- Persistir el nuevo título
+- Retornar el grupo actualizado
+
+---
 
 ## HDU_11: Definir programa del curso
 
@@ -144,6 +261,21 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Usabilidad de la Ponderación automática**: Comprobar que al activar la "Ponderación Equitativa", los campos de entrada se deshabiliten o se actualicen visualmente de forma inmediata para dar feedback al docente
 - **Precisión Aritmética**: Validar que el sistema use tipos de datos decimales de alta precisión (como BigDecimal en Java) para evitar errores de redondeo acumulados en los promedios ponderados
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la creación del programa del curso
+- Persistir instancias evaluatorias
+- Persistir la ponderación de cada instancia
+- Validar suma exacta de ponderaciones igual a 100%
+- Validar nombre no vacío
+- Validar nombre no duplicado
+- Validar ponderación mayor a 0
+- Implementar ponderación equitativa
+
+---
+
 ## HDU_12: Eliminar instancia de evaluacion del programa del curso
 
 ### Tareas de Calidad (QA)
@@ -156,6 +288,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad de Datos**: Validar que las notas ya registradas de los estudiantes en esa instancia sean eliminadas en la BD
 - **Consistencia de Calculos**: Verificar que el Promedio de los estudiantes se actualice inmediatamente en toda la plataforma tras confirmar la eliminación y redistribución de pesos
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la edición del programa para eliminar instancias
+- Eliminar la instancia seleccionada
+- Actualizar ponderaciones restantes
+- Validar suma exacta igual a 100%
+- Persistir el programa actualizado
+
+---
 
 ## HDU_13: Actualizar instancia de evaluacion del programa del cursoo
 
@@ -171,6 +315,21 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Prueba de estres del rendimiento**: Simular la actualización de pesos en un curso con 100 estudiantes y 10 instancias evaluatorias para asegurar que el recálculo no bloquee la base de datos o cause un timeout
 - **Atomicidad**: Confirmar que si el recálculo de promedios falla a mitad del proceso, el sistema haga un rollback y mantenga los pesos anteriores
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar edición de nombre de instancia
+- Implementar edición de ponderación de instancia
+- Validar nombre no vacío
+- Validar nombre no duplicado
+- Validar ponderación mayor a 0
+- Validar suma exacta igual a 100%
+- Recalcular promedios ponderados y generales cuando cambie una ponderación y existan notas registradas
+- Persistir el programa actualizado
+
+---
+
 ## HDU_14: registrar nota de una instancia de evaluacion del programa a un estudiante del curso
 
 ### Tareas de Calidad (QA)
@@ -185,6 +344,21 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Precisión Matemática**: Validar que el recálculo del Promedio Ponderado y General ocurra en tiempo real (o tras el guardado) sin errores de redondeo
 - **Atomicidad**: Confirmar que si el recálculo de promedios falla a mitad del procesoo, el sistema haga un rollback y mantenga los pesos anteriores
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar el registro de nota por estudiante e instancia
+- Validar que la nota sea numérica
+- Rechazar notas negativas
+- Aceptar notas nulas
+- Tratar la nota nula como 0 para el cálculo de promedios
+- Recalcular promedio ponderado
+- Recalcular promedio general
+- Persistir nota y promedios actualizados
+
+---
+
 ## HDU_15: generar boletín del estudiante de un curso
 
 ### Tareas de Calidad (QA)
@@ -198,6 +372,19 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Diseño y Layout**: Asegurar que en formatos como PDF el contenido no se "corte" si el nombre del estudiante es muy largo o si hay muchas instancias evaluatorias
 - **Rendimiento de Generación**: Medir el tiempo de respuesta desde el "clic" hasta que inicia la descarga (especialmente en formatos pesados como PDF)
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la generación de boletín por estudiante
+- Construir la salida con datos del estudiante, notas y promedios
+- Implementar descarga en los formatos disponibles
+- Detectar notas vacías
+- Emitir advertencia previa por notas vacías
+- Generar el boletín después de la confirmación
+
+---
 
 ## HDU_16: generar reporte de calificaciones de todos los estudiantes de un curso
 
@@ -214,6 +401,20 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Usabilidad del Layout**: En el formato PDF, verificar que el reporte sea legible si hay muchas columnas
 - **Seguridad de Datos**: Asegurar que el reporte solo incluya estudiantes activos del curso y no filtre datos de otros cursos
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la generación del reporte consolidado del curso
+- Construir la salida con estudiantes en filas
+- Incluir notas por instancia en columnas
+- Incluir promedios finales por estudiante
+- Implementar descarga en los formatos disponibles
+- Detectar notas nulas
+- Emitir advertencia previa por registros incompletos
+
+---
+
 ## HDU_17: dar de baja a un estudiante del curso
 
 ### Tareas de Calidad (QA)
@@ -229,6 +430,18 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 - **Consistencia de Reportes**: Verificar que, tras la baja, el reporte grupal (HDU_16) ya no incluya al estudiante, recalculando correctamente cualquier métrica grupal si existiera
 - **Seguridad de Operación**: Asegurar que aparezca un modal de confirmación para evitar bajas accidentales
 
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la baja del estudiante en el curso
+- Eliminar la relación estudiante-curso
+- Eliminar las notas del estudiante en las instancias del curso cuando existan
+- Conservar el registro global del estudiante
+- Retornar la lista actualizada del curso
+
+---
+
 ## HDU_18: actualizar información personal de un estudiante
 
 ### Tareas de Calidad (QA)
@@ -241,7 +454,19 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 
 #### No funcionales
 - **Integridad Referencial (ID)**: Si el ID es la clave primaria, validar que el cambio de ID en la tabla de Estudiantes actualice correctamente todas las llaves foráneas en las tablas de Notas y Grupos (Update en cascada)
-- **Consistencia de Cache**: Asegurar que el Frontend no muestre información desactualizada tras la edición 
+- **Consistencia de Cache**: Asegurar que el Frontend no muestre información desactualizada tras la edición
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la actualización global de Nombre, ID y Correo
+- Validar ID no duplicado
+- Validar campos obligatorios no vacíos
+- Persistir la actualización
+- Propagar los cambios a todos los cursos donde el estudiante esté inscrito
+
+---
 
 ## HDU_19: eliminar estudiante del sistema (global)
 
@@ -256,3 +481,14 @@ A continuación dejamos la constancia de las subtasks redactadas para este proye
 #### No funcionales
 - **Integridad de Datos**: Validar en base de datos que se hayan eliminado los registros relacionados al estudiante para evitar "registros huérfanos"
 - **Seguridad**: Comprobar que el modal de advertencia sea lo suficientemente disruptivo (ej: color rojo, mensaje claro) para evitar errores humanos fatales
+
+### Tareas de Desarrollo (Dev)
+
+#### Funcionales
+
+- Implementar la eliminación global del estudiante
+- Mostrar advertencia previa por pérdida de notas
+- Eliminar al estudiante del directorio
+- Eliminar al estudiante de todos los cursos donde esté inscrito
+- Eliminar las notas asociadas al estudiante
+- Cancelar la operación sin cambios cuando no exista confirmación
